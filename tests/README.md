@@ -11,7 +11,7 @@ sudo apt-get install python3-pytest
 
 - To run all test cases, under the root directory, execute
 ```
-pytest
+pytest # some systems name it as `pytest-3` Check the binary name in /usr/bin.
 ```
 
 - To run a specific test class, under the test directory, execute
