@@ -1,0 +1,2160 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["userMetadata.aaa", 16, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 8, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "migration_t",
+      "id" : 4,
+      "fields" : [
+        ["tabl1_data", 16, false],
+        ["tabl2_data", 16, false],
+        ["tabl3_data", 16, false],
+        ["protocol", 16, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 5,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["seqNo", 32, false],
+        ["ackNo", 32, false],
+        ["dataOffset", 4, false],
+        ["res", 3, false],
+        ["ecn", 3, false],
+        ["ctrl", 6, false],
+        ["window", 16, false],
+        ["checksum", 16, false],
+        ["urgentPtr", 16, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 3,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "migration",
+      "id" : 4,
+      "header_type" : "migration_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp",
+      "id" : 5,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x06",
+              "mask" : null,
+              "next_state" : "parse_tcp"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xfb",
+              "mask" : null,
+              "next_state" : "parse_migration"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_migration",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "migration"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_tcp",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "test.p4",
+        "line" : 567,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "ipv4", "migration", "tcp"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "test.p4",
+        "line" : 545,
+        "column" : 1,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "algo" : "csum16",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "version"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ihl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "diffserv"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "totalLen"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "identification"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "fragOffset"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ttl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "srcAddr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dstAddr"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "MyIngress.tab1_act1",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffffffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 140,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.srcAddr = 0xffffffff"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab1_act2",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 143,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 144,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab2_act1",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffffffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 158,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr = 0xffffffff"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab2_act2",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffffffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 161,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.srcAddr = 0xffffffff"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab3_act1",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffffffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 176,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr = 0xffffffff"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab3_act2",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 179,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 180,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab4_act1",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 195,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab5_act1",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "dstPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 209,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.dstPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab_switch1_act1",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "dstPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 223,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.dstPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab_switch1_act2",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 226,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab7_act1",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 240,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab8_act1",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 253,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab9_act1",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 266,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab10_act1",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 279,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab11_act1",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 292,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab12_act1",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 305,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab13_act1",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 318,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab14_act1",
+      "id" : 17,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 331,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab15_act1",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 344,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab16_act1",
+      "id" : 19,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 357,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab17_act1",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 370,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab_switch2_act1",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "dstPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 383,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.dstPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab_switch2_act2",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 386,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab_switch2_act3",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x003c"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 389,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 60"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab19_act1",
+      "id" : 24,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 404,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab20_act1",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 417,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab21_act1",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 430,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab22_act1",
+      "id" : 27,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 443,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.tab23_act1",
+      "id" : 28,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0050"
+            }
+          ],
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 456,
+            "column" : 8,
+            "source_fragment" : "hdr.tcp.srcPort = 80"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "test.p4",
+        "line" : 133,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "MyIngress.tab1",
+      "tables" : [
+        {
+          "name" : "MyIngress.tab1",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 146,
+            "column" : 10,
+            "source_fragment" : "tab1"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.ipv4.srcAddr",
+              "target" : ["ipv4", "srcAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [0, 1],
+          "actions" : ["MyIngress.tab1_act1", "MyIngress.tab1_act2"],
+          "base_default_next" : "MyIngress.tab2",
+          "next_tables" : {
+            "MyIngress.tab1_act1" : "MyIngress.tab2",
+            "MyIngress.tab1_act2" : "MyIngress.tab2"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab2",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 164,
+            "column" : 10,
+            "source_fragment" : "tab2"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [2, 3],
+          "actions" : ["MyIngress.tab2_act1", "MyIngress.tab2_act2"],
+          "base_default_next" : "MyIngress.tab3",
+          "next_tables" : {
+            "MyIngress.tab2_act1" : "MyIngress.tab3",
+            "MyIngress.tab2_act2" : "MyIngress.tab3"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab3",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 183,
+            "column" : 10,
+            "source_fragment" : "tab3"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [4, 5],
+          "actions" : ["MyIngress.tab3_act1", "MyIngress.tab3_act2"],
+          "base_default_next" : "MyIngress.tab4",
+          "next_tables" : {
+            "MyIngress.tab3_act1" : "MyIngress.tab4",
+            "MyIngress.tab3_act2" : "MyIngress.tab4"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab4",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 198,
+            "column" : 10,
+            "source_fragment" : "tab4"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["MyIngress.tab4_act1"],
+          "base_default_next" : "node_6",
+          "next_tables" : {
+            "MyIngress.tab4_act1" : "node_6"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab5",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 212,
+            "column" : 10,
+            "source_fragment" : "tab5"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["MyIngress.tab5_act1"],
+          "base_default_next" : "MyIngress.tab_switch1",
+          "next_tables" : {
+            "MyIngress.tab5_act1" : "MyIngress.tab_switch1"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab_switch1",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 228,
+            "column" : 10,
+            "source_fragment" : "tab_switch1"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8, 9],
+          "actions" : ["MyIngress.tab_switch1_act1", "MyIngress.tab_switch1_act2"],
+          "base_default_next" : "MyIngress.tab12",
+          "next_tables" : {
+            "MyIngress.tab_switch1_act1" : "MyIngress.tab7",
+            "MyIngress.tab_switch1_act2" : "node_10"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab7",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 242,
+            "column" : 10,
+            "source_fragment" : "tab7"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10],
+          "actions" : ["MyIngress.tab7_act1"],
+          "base_default_next" : "MyIngress.tab12",
+          "next_tables" : {
+            "MyIngress.tab7_act1" : "MyIngress.tab12"
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab8",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 255,
+            "column" : 10,
+            "source_fragment" : "tab8"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["MyIngress.tab8_act1"],
+          "base_default_next" : "MyIngress.tab11",
+          "next_tables" : {
+            "MyIngress.tab8_act1" : "MyIngress.tab11"
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab9",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 268,
+            "column" : 10,
+            "source_fragment" : "tab9"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["MyIngress.tab9_act1"],
+          "base_default_next" : "MyIngress.tab10",
+          "next_tables" : {
+            "MyIngress.tab9_act1" : "MyIngress.tab10"
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab10",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 281,
+            "column" : 10,
+            "source_fragment" : "tab10"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13],
+          "actions" : ["MyIngress.tab10_act1"],
+          "base_default_next" : "MyIngress.tab11",
+          "next_tables" : {
+            "MyIngress.tab10_act1" : "MyIngress.tab11"
+          },
+          "default_entry" : {
+            "action_id" : 13,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab11",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 294,
+            "column" : 10,
+            "source_fragment" : "tab11"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14],
+          "actions" : ["MyIngress.tab11_act1"],
+          "base_default_next" : "MyIngress.tab12",
+          "next_tables" : {
+            "MyIngress.tab11_act1" : "MyIngress.tab12"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab12",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 307,
+            "column" : 10,
+            "source_fragment" : "tab12"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["MyIngress.tab12_act1"],
+          "base_default_next" : "node_16",
+          "next_tables" : {
+            "MyIngress.tab12_act1" : "node_16"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab13",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 320,
+            "column" : 10,
+            "source_fragment" : "tab13"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["MyIngress.tab13_act1"],
+          "base_default_next" : "node_18",
+          "next_tables" : {
+            "MyIngress.tab13_act1" : "node_18"
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab15",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 346,
+            "column" : 10,
+            "source_fragment" : "tab15"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18],
+          "actions" : ["MyIngress.tab15_act1"],
+          "base_default_next" : "MyIngress.tab16",
+          "next_tables" : {
+            "MyIngress.tab15_act1" : "MyIngress.tab16"
+          },
+          "default_entry" : {
+            "action_id" : 18,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab16",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 359,
+            "column" : 10,
+            "source_fragment" : "tab16"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [19],
+          "actions" : ["MyIngress.tab16_act1"],
+          "base_default_next" : "MyIngress.tab17",
+          "next_tables" : {
+            "MyIngress.tab16_act1" : "MyIngress.tab17"
+          },
+          "default_entry" : {
+            "action_id" : 19,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab17",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 372,
+            "column" : 10,
+            "source_fragment" : "tab17"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [20],
+          "actions" : ["MyIngress.tab17_act1"],
+          "base_default_next" : "MyIngress.tab23",
+          "next_tables" : {
+            "MyIngress.tab17_act1" : "MyIngress.tab23"
+          },
+          "default_entry" : {
+            "action_id" : 20,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab14",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 333,
+            "column" : 10,
+            "source_fragment" : "tab14"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [17],
+          "actions" : ["MyIngress.tab14_act1"],
+          "base_default_next" : "MyIngress.tab_switch2",
+          "next_tables" : {
+            "MyIngress.tab14_act1" : "MyIngress.tab_switch2"
+          },
+          "default_entry" : {
+            "action_id" : 17,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab_switch2",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 391,
+            "column" : 10,
+            "source_fragment" : "tab_switch2"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.dstPort",
+              "target" : ["tcp", "dstPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21, 22, 23],
+          "actions" : ["MyIngress.tab_switch2_act1", "MyIngress.tab_switch2_act2", "MyIngress.tab_switch2_act3"],
+          "base_default_next" : "MyIngress.tab22",
+          "next_tables" : {
+            "MyIngress.tab_switch2_act1" : "MyIngress.tab19",
+            "MyIngress.tab_switch2_act2" : "MyIngress.tab20",
+            "MyIngress.tab_switch2_act3" : "MyIngress.tab21"
+          },
+          "default_entry" : {
+            "action_id" : 21,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab19",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 406,
+            "column" : 10,
+            "source_fragment" : "tab19"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [24],
+          "actions" : ["MyIngress.tab19_act1"],
+          "base_default_next" : "MyIngress.tab22",
+          "next_tables" : {
+            "MyIngress.tab19_act1" : "MyIngress.tab22"
+          },
+          "default_entry" : {
+            "action_id" : 24,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab20",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 419,
+            "column" : 10,
+            "source_fragment" : "tab20"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [25],
+          "actions" : ["MyIngress.tab20_act1"],
+          "base_default_next" : "MyIngress.tab22",
+          "next_tables" : {
+            "MyIngress.tab20_act1" : "MyIngress.tab22"
+          },
+          "default_entry" : {
+            "action_id" : 25,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab21",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 432,
+            "column" : 10,
+            "source_fragment" : "tab21"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [26],
+          "actions" : ["MyIngress.tab21_act1"],
+          "base_default_next" : "MyIngress.tab22",
+          "next_tables" : {
+            "MyIngress.tab21_act1" : "MyIngress.tab22"
+          },
+          "default_entry" : {
+            "action_id" : 26,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab22",
+          "id" : 21,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 445,
+            "column" : 10,
+            "source_fragment" : "tab22"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [27],
+          "actions" : ["MyIngress.tab22_act1"],
+          "base_default_next" : "MyIngress.tab23",
+          "next_tables" : {
+            "MyIngress.tab22_act1" : "MyIngress.tab23"
+          },
+          "default_entry" : {
+            "action_id" : 27,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.tab23",
+          "id" : 22,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 458,
+            "column" : 10,
+            "source_fragment" : "tab23"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.tcp.srcPort",
+              "target" : ["tcp", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [28],
+          "actions" : ["MyIngress.tab23_act1"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.tab23_act1" : null
+          },
+          "default_entry" : {
+            "action_id" : 28,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_6",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 474,
+            "column" : 12,
+            "source_fragment" : "hdr.tcp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["tcp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "MyIngress.tab5",
+          "false_next" : "MyIngress.tab_switch1"
+        },
+        {
+          "name" : "node_10",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 487,
+            "column" : 20,
+            "source_fragment" : "hdr.tcp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["tcp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "MyIngress.tab8",
+          "false_next" : "MyIngress.tab9"
+        },
+        {
+          "name" : "node_16",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 498,
+            "column" : 12,
+            "source_fragment" : "hdr.tcp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["tcp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "MyIngress.tab13",
+          "false_next" : "MyIngress.tab14"
+        },
+        {
+          "name" : "node_18",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "test.p4",
+            "line" : 500,
+            "column" : 16,
+            "source_fragment" : "hdr.tcp.srcPort == 80"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["tcp", "srcPort"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0050"
+              }
+            }
+          },
+          "true_next" : "MyIngress.tab15",
+          "false_next" : "MyIngress.tab17"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "test.p4",
+        "line" : 531,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [
+    {
+      "name" : "cksum",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "test.p4",
+        "line" : 545,
+        "column" : 1,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "target" : ["ipv4", "hdrChecksum"],
+      "type" : "generic",
+      "calculation" : "calc",
+      "verify" : false,
+      "update" : true,
+      "if_cond" : {
+        "type" : "expression",
+        "value" : {
+          "op" : "d2b",
+          "left" : null,
+          "right" : {
+            "type" : "field",
+            "value" : ["ipv4", "$valid$"]
+          }
+        }
+      }
+    }
+  ],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "test.p4",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

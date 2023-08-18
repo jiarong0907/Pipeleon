@@ -1,0 +1,925 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 45245786
+    name: "sirius_ingress.outbound.acl.stage1"
+    alias: "outbound.acl.stage1"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:dip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv4.src_addr:sip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 4
+    name: "hdr.ipv4.src_addr:protocol"
+    bitwidth: 8
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 5
+    name: "hdr.tcp.src_port:sport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  match_fields {
+    id: 6
+    name: "hdr.tcp.dst_port:dport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  action_refs {
+    id: 17747480
+  }
+  action_refs {
+    id: 21707299
+  }
+  action_refs {
+    id: 33153113
+  }
+  action_refs {
+    id: 30870131
+  }
+  direct_resource_ids: 324883753
+  size: 1024
+}
+tables {
+  preamble {
+    id: 48005551
+    name: "sirius_ingress.outbound.acl.stage2"
+    alias: "outbound.acl.stage2"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:dip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv4.src_addr:sip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 4
+    name: "hdr.ipv4.src_addr:protocol"
+    bitwidth: 8
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 5
+    name: "hdr.tcp.src_port:sport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  match_fields {
+    id: 6
+    name: "hdr.tcp.dst_port:dport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  action_refs {
+    id: 17747480
+  }
+  action_refs {
+    id: 21707299
+  }
+  action_refs {
+    id: 33153113
+  }
+  action_refs {
+    id: 30870131
+  }
+  direct_resource_ids: 329767378
+  size: 1024
+}
+tables {
+  preamble {
+    id: 44540741
+    name: "sirius_ingress.outbound.acl.stage3"
+    alias: "outbound.acl.stage3"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:dip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv4.src_addr:sip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 4
+    name: "hdr.ipv4.src_addr:protocol"
+    bitwidth: 8
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 5
+    name: "hdr.tcp.src_port:sport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  match_fields {
+    id: 6
+    name: "hdr.tcp.dst_port:dport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  action_refs {
+    id: 17747480
+  }
+  action_refs {
+    id: 21707299
+  }
+  action_refs {
+    id: 33153113
+  }
+  action_refs {
+    id: 30870131
+  }
+  direct_resource_ids: 332756783
+  size: 1024
+}
+tables {
+  preamble {
+    id: 36552718
+    name: "sirius_ingress.outbound.eni_lookup_from_vm"
+    alias: "eni_lookup_from_vm"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.src_addr:smac"
+    bitwidth: 48
+    match_type: EXACT
+  }
+  action_refs {
+    id: 29524369
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 39371248
+    name: "sirius_ingress.outbound.eni_to_vni"
+    alias: "eni_to_vni"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  action_refs {
+    id: 26638573
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 40940231
+    name: "sirius_ingress.outbound.routing"
+    alias: "routing"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:destination"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 30195580
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  direct_resource_ids: 334330923
+  size: 1024
+}
+tables {
+  preamble {
+    id: 40316685
+    name: "sirius_ingress.outbound.ca_to_pa"
+    alias: "ca_to_pa"
+  }
+  match_fields {
+    id: 1
+    name: "meta.encap_data.dest_vnet_vni:dest_vni"
+    bitwidth: 24
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:dip"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  action_refs {
+    id: 27070713
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  direct_resource_ids: 331056788
+  size: 1024
+}
+tables {
+  preamble {
+    id: 48244731
+    name: "sirius_ingress.inbound.acl.stage1"
+    alias: "inbound.acl.stage1"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:dip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv4.src_addr:sip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 4
+    name: "hdr.ipv4.src_addr:protocol"
+    bitwidth: 8
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 5
+    name: "hdr.tcp.src_port:sport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  match_fields {
+    id: 6
+    name: "hdr.tcp.dst_port:dport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  action_refs {
+    id: 25586241
+  }
+  action_refs {
+    id: 24242113
+  }
+  action_refs {
+    id: 20854708
+  }
+  action_refs {
+    id: 29710796
+  }
+  direct_resource_ids: 329773875
+  size: 1024
+}
+tables {
+  preamble {
+    id: 35290223
+    name: "sirius_ingress.inbound.acl.stage2"
+    alias: "inbound.acl.stage2"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:dip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv4.src_addr:sip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 4
+    name: "hdr.ipv4.src_addr:protocol"
+    bitwidth: 8
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 5
+    name: "hdr.tcp.src_port:sport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  match_fields {
+    id: 6
+    name: "hdr.tcp.dst_port:dport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  action_refs {
+    id: 25586241
+  }
+  action_refs {
+    id: 24242113
+  }
+  action_refs {
+    id: 20854708
+  }
+  action_refs {
+    id: 29710796
+  }
+  direct_resource_ids: 326741682
+  size: 1024
+}
+tables {
+  preamble {
+    id: 37960894
+    name: "sirius_ingress.inbound.acl.stage3"
+    alias: "inbound.acl.stage3"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "hdr.ipv4.dst_addr:dip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 3
+    name: "hdr.ipv4.src_addr:sip"
+    bitwidth: 32
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 4
+    name: "hdr.ipv4.src_addr:protocol"
+    bitwidth: 8
+    other_match_type: "list"
+  }
+  match_fields {
+    id: 5
+    name: "hdr.tcp.src_port:sport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  match_fields {
+    id: 6
+    name: "hdr.tcp.dst_port:dport"
+    bitwidth: 16
+    other_match_type: "range_list"
+  }
+  action_refs {
+    id: 25586241
+  }
+  action_refs {
+    id: 24242113
+  }
+  action_refs {
+    id: 20854708
+  }
+  action_refs {
+    id: 29710796
+  }
+  direct_resource_ids: 327151690
+  size: 1024
+}
+tables {
+  preamble {
+    id: 48829703
+    name: "sirius_ingress.inbound.eni_lookup_to_vm"
+    alias: "eni_lookup_to_vm"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ethernet.dst_addr:dmac"
+    bitwidth: 48
+    match_type: EXACT
+  }
+  action_refs {
+    id: 19681083
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 45524488
+    name: "sirius_ingress.inbound.eni_to_vm"
+    alias: "eni_to_vm"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  action_refs {
+    id: 19074087
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 43932467
+    name: "sirius_ingress.inbound.vm"
+    alias: "vm"
+  }
+  match_fields {
+    id: 1
+    name: "meta.vm_id:vm_id"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  action_refs {
+    id: 22100210
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 39492935
+    name: "sirius_ingress.direction_lookup"
+    alias: "direction_lookup"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.vxlan.vni:vni"
+    bitwidth: 24
+    match_type: EXACT
+  }
+  action_refs {
+    id: 26846843
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  size: 1024
+  is_const_table: true
+}
+tables {
+  preamble {
+    id: 38651039
+    name: "sirius_ingress.appliance"
+    alias: "appliance"
+  }
+  match_fields {
+    id: 1
+    name: "meta.appliance_id:appliance_id"
+    bitwidth: 8
+    match_type: TERNARY
+  }
+  action_refs {
+    id: 31517071
+  }
+  action_refs {
+    id: 21257015
+    annotations: "@defaultonly"
+    scope: DEFAULT_ONLY
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 45508923
+    name: "sirius_ingress.eni_meter"
+    alias: "eni_meter"
+  }
+  match_fields {
+    id: 1
+    name: "meta.eni:eni"
+    bitwidth: 16
+    match_type: EXACT
+  }
+  match_fields {
+    id: 2
+    name: "meta.direction:direction"
+    bitwidth: 2
+    match_type: EXACT
+  }
+  match_fields {
+    id: 3
+    name: "meta.dropped:dropped"
+    bitwidth: 1
+    match_type: EXACT
+  }
+  action_refs {
+    id: 21257015
+  }
+  direct_resource_ids: 321070004
+  size: 1024
+}
+actions {
+  preamble {
+    id: 21257015
+    name: "NoAction"
+    alias: "NoAction"
+    annotations: "@noWarn(\"unused\")"
+  }
+}
+actions {
+  preamble {
+    id: 28528336
+    name: "vxlan_decap"
+    alias: "vxlan_decap"
+  }
+}
+actions {
+  preamble {
+    id: 29669127
+    name: "vxlan_encap"
+    alias: "vxlan_encap"
+  }
+}
+actions {
+  preamble {
+    id: 17747480
+    name: "sirius_ingress.outbound.acl.permit"
+    alias: "outbound.acl.permit"
+  }
+}
+actions {
+  preamble {
+    id: 21707299
+    name: "sirius_ingress.outbound.acl.permit_and_continue"
+    alias: "outbound.acl.permit_and_continue"
+  }
+}
+actions {
+  preamble {
+    id: 33153113
+    name: "sirius_ingress.outbound.acl.deny"
+    alias: "outbound.acl.deny"
+  }
+}
+actions {
+  preamble {
+    id: 30870131
+    name: "sirius_ingress.outbound.acl.deny_and_continue"
+    alias: "outbound.acl.deny_and_continue"
+  }
+}
+actions {
+  preamble {
+    id: 29524369
+    name: "sirius_ingress.outbound.set_eni"
+    alias: "outbound.set_eni"
+  }
+  params {
+    id: 1
+    name: "eni"
+    bitwidth: 16
+  }
+}
+actions {
+  preamble {
+    id: 26638573
+    name: "sirius_ingress.outbound.set_vni"
+    alias: "set_vni"
+  }
+  params {
+    id: 1
+    name: "vni"
+    bitwidth: 24
+  }
+}
+actions {
+  preamble {
+    id: 30195580
+    name: "sirius_ingress.outbound.route_vnet"
+    alias: "route_vnet"
+  }
+  params {
+    id: 1
+    name: "dest_vnet_vni"
+    bitwidth: 24
+  }
+}
+actions {
+  preamble {
+    id: 27070713
+    name: "sirius_ingress.outbound.set_tunnel_mapping"
+    alias: "set_tunnel_mapping"
+  }
+  params {
+    id: 1
+    name: "underlay_dip"
+    bitwidth: 32
+  }
+  params {
+    id: 2
+    name: "overlay_dmac"
+    bitwidth: 48
+  }
+  params {
+    id: 3
+    name: "use_dst_vni"
+    bitwidth: 1
+  }
+}
+actions {
+  preamble {
+    id: 25586241
+    name: "sirius_ingress.inbound.acl.permit"
+    alias: "inbound.acl.permit"
+  }
+}
+actions {
+  preamble {
+    id: 24242113
+    name: "sirius_ingress.inbound.acl.permit_and_continue"
+    alias: "inbound.acl.permit_and_continue"
+  }
+}
+actions {
+  preamble {
+    id: 20854708
+    name: "sirius_ingress.inbound.acl.deny"
+    alias: "inbound.acl.deny"
+  }
+}
+actions {
+  preamble {
+    id: 29710796
+    name: "sirius_ingress.inbound.acl.deny_and_continue"
+    alias: "inbound.acl.deny_and_continue"
+  }
+}
+actions {
+  preamble {
+    id: 19681083
+    name: "sirius_ingress.inbound.set_eni"
+    alias: "inbound.set_eni"
+  }
+  params {
+    id: 1
+    name: "eni"
+    bitwidth: 16
+  }
+}
+actions {
+  preamble {
+    id: 22100210
+    name: "sirius_ingress.inbound.set_vm_attributes"
+    alias: "set_vm_attributes"
+  }
+  params {
+    id: 1
+    name: "underlay_dmac"
+    bitwidth: 48
+  }
+  params {
+    id: 2
+    name: "underlay_dip"
+    bitwidth: 32
+  }
+  params {
+    id: 3
+    name: "vni"
+    bitwidth: 24
+  }
+}
+actions {
+  preamble {
+    id: 19074087
+    name: "sirius_ingress.inbound.set_vm_id"
+    alias: "set_vm_id"
+  }
+  params {
+    id: 1
+    name: "vm_id"
+    bitwidth: 16
+  }
+}
+actions {
+  preamble {
+    id: 26846843
+    name: "sirius_ingress.set_direction"
+    alias: "set_direction"
+  }
+  params {
+    id: 1
+    name: "direction"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 31517071
+    name: "sirius_ingress.set_appliance"
+    alias: "set_appliance"
+  }
+  params {
+    id: 1
+    name: "neighbor_mac"
+    bitwidth: 48
+  }
+  params {
+    id: 2
+    name: "mac"
+    bitwidth: 48
+  }
+  params {
+    id: 3
+    name: "ip"
+    bitwidth: 32
+  }
+}
+direct_counters {
+  preamble {
+    id: 324883753
+    name: "sirius_ingress.outbound.acl.stage1_counter"
+    alias: "outbound.acl.stage1_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 45245786
+}
+direct_counters {
+  preamble {
+    id: 329767378
+    name: "sirius_ingress.outbound.acl.stage2_counter"
+    alias: "outbound.acl.stage2_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 48005551
+}
+direct_counters {
+  preamble {
+    id: 332756783
+    name: "sirius_ingress.outbound.acl.stage3_counter"
+    alias: "outbound.acl.stage3_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 44540741
+}
+direct_counters {
+  preamble {
+    id: 334330923
+    name: "sirius_ingress.outbound.routing_counter"
+    alias: "routing_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 40940231
+}
+direct_counters {
+  preamble {
+    id: 331056788
+    name: "sirius_ingress.outbound.ca_to_pa_counter"
+    alias: "ca_to_pa_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 40316685
+}
+direct_counters {
+  preamble {
+    id: 329773875
+    name: "sirius_ingress.inbound.acl.stage1_counter"
+    alias: "inbound.acl.stage1_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 48244731
+}
+direct_counters {
+  preamble {
+    id: 326741682
+    name: "sirius_ingress.inbound.acl.stage2_counter"
+    alias: "inbound.acl.stage2_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 35290223
+}
+direct_counters {
+  preamble {
+    id: 327151690
+    name: "sirius_ingress.inbound.acl.stage3_counter"
+    alias: "inbound.acl.stage3_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 37960894
+}
+direct_counters {
+  preamble {
+    id: 321070004
+    name: "sirius_ingress.eni_counter"
+    alias: "eni_counter"
+  }
+  spec {
+    unit: BOTH
+  }
+  direct_table_id: 45508923
+}
+type_info {
+  serializable_enums {
+    key: "direction_t"
+    value {
+      underlying_type {
+        bitwidth: 2
+      }
+      members {
+        name: "INVALID"
+        value: "\000"
+      }
+      members {
+        name: "OUTBOUND"
+        value: "\001"
+      }
+      members {
+        name: "INBOUND"
+        value: "\002"
+      }
+    }
+  }
+}

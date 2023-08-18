@@ -1,0 +1,1869 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : []
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["flex_change_path", 32, false],
+        ["flex_next_tab", 32, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dst_addr", 48, false],
+        ["src_addr", 48, false],
+        ["eth_type", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 8, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 4,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["seqNo", 32, false],
+        ["ackNo", 32, false],
+        ["dataOffset", 4, false],
+        ["res", 4, false],
+        ["flags", 8, false],
+        ["window", 16, false],
+        ["checksum", 16, false],
+        ["urgentPtr", 16, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "eth_hdr",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4_hdr",
+      "id" : 3,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp_hdr",
+      "id" : 4,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "eth_hdr"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4_hdr"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp_hdr"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "../tests/testdata/synthesized/prog_1.p4",
+        "line" : 694,
+        "column" : 8,
+        "source_fragment" : "deparser"
+      },
+      "order" : ["eth_hdr", "ipv4_hdr", "tcp_hdr"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [],
+  "calculations" : [],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "ingress.drop",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 73,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(sm)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 74,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.drop",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 73,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(sm)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 74,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.drop",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 73,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(sm)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 74,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.drop",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 73,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(sm)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 74,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.KGnsA",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "fragOffset"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1b5b"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 153,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.fragOffset = 7003"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "protocol"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "ttl"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 154,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.protocol = h.ipv4_hdr.ttl"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.KGnsA",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "fragOffset"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1b5b"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 153,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.fragOffset = 7003"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "protocol"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "ttl"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 154,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.protocol = h.ipv4_hdr.ttl"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.KGnsA",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "fragOffset"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1b5b"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 153,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.fragOffset = 7003"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "protocol"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "ttl"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 154,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.protocol = h.ipv4_hdr.ttl"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.AWryv",
+      "id" : 16,
+      "runtime_data" : [
+        {
+          "name" : "PrMd",
+          "bitwidth" : 4
+        },
+        {
+          "name" : "hiPT",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "flags"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["tcp_hdr", "flags"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x82"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["ipv4_hdr", "ttl"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 165,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.flags = h.tcp_hdr.flags + 6365 - (8w241 - 8w150) - h.ipv4_hdr.ttl"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_rid"]
+            },
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "checksum"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 166,
+            "column" : 8,
+            "source_fragment" : "sm.egress_rid = h.tcp_hdr.checksum"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.qYjVT",
+      "id" : 17,
+      "runtime_data" : [
+        {
+          "name" : "yVya",
+          "bitwidth" : 8
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "priority"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "flags"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 169,
+            "column" : 8,
+            "source_fragment" : "sm.priority = h.ipv4_hdr.flags"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_global_timestamp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["eth_hdr", "dst_addr"]
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "+",
+                                      "left" : {
+                                        "type" : "expression",
+                                        "value" : {
+                                          "op" : "&",
+                                          "left" : {
+                                            "type" : "expression",
+                                            "value" : {
+                                              "op" : "+",
+                                              "left" : {
+                                                "type" : "field",
+                                                "value" : ["eth_hdr", "src_addr"]
+                                              },
+                                              "right" : {
+                                                "type" : "hexstr",
+                                                "value" : "0x00000000136d"
+                                              }
+                                            }
+                                          },
+                                          "right" : {
+                                            "type" : "hexstr",
+                                            "value" : "0xffffffffffff"
+                                          }
+                                        }
+                                      },
+                                      "right" : {
+                                        "type" : "field",
+                                        "value" : ["standard_metadata", "egress_global_timestamp"]
+                                      }
+                                    }
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0xffffffffffff"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["eth_hdr", "dst_addr"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 170,
+            "column" : 8,
+            "source_fragment" : "sm.egress_global_timestamp = h.eth_hdr.dst_addr + (h.eth_hdr.src_addr + 48w4973 + sm.egress_global_timestamp) - h.eth_hdr.dst_addr"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.qYjVT",
+      "id" : 18,
+      "runtime_data" : [
+        {
+          "name" : "yVya",
+          "bitwidth" : 8
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "priority"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "flags"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 169,
+            "column" : 8,
+            "source_fragment" : "sm.priority = h.ipv4_hdr.flags"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_global_timestamp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["eth_hdr", "dst_addr"]
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "+",
+                                      "left" : {
+                                        "type" : "expression",
+                                        "value" : {
+                                          "op" : "&",
+                                          "left" : {
+                                            "type" : "expression",
+                                            "value" : {
+                                              "op" : "+",
+                                              "left" : {
+                                                "type" : "field",
+                                                "value" : ["eth_hdr", "src_addr"]
+                                              },
+                                              "right" : {
+                                                "type" : "hexstr",
+                                                "value" : "0x00000000136d"
+                                              }
+                                            }
+                                          },
+                                          "right" : {
+                                            "type" : "hexstr",
+                                            "value" : "0xffffffffffff"
+                                          }
+                                        }
+                                      },
+                                      "right" : {
+                                        "type" : "field",
+                                        "value" : ["standard_metadata", "egress_global_timestamp"]
+                                      }
+                                    }
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0xffffffffffff"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["eth_hdr", "dst_addr"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 170,
+            "column" : 8,
+            "source_fragment" : "sm.egress_global_timestamp = h.eth_hdr.dst_addr + (h.eth_hdr.src_addr + 48w4973 + sm.egress_global_timestamp) - h.eth_hdr.dst_addr"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.jPhyW",
+      "id" : 19,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_qdepth"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "enq_qdepth"]
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "-",
+                                      "left" : {
+                                        "type" : "expression",
+                                        "value" : {
+                                          "op" : "&",
+                                          "left" : {
+                                            "type" : "expression",
+                                            "value" : {
+                                              "op" : "-",
+                                              "left" : {
+                                                "type" : "hexstr",
+                                                "value" : "0x000ce3"
+                                              },
+                                              "right" : {
+                                                "type" : "field",
+                                                "value" : ["standard_metadata", "deq_qdepth"]
+                                              }
+                                            }
+                                          },
+                                          "right" : {
+                                            "type" : "hexstr",
+                                            "value" : "0x07ffff"
+                                          }
+                                        }
+                                      },
+                                      "right" : {
+                                        "type" : "field",
+                                        "value" : ["standard_metadata", "deq_qdepth"]
+                                      }
+                                    }
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x07ffff"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["standard_metadata", "deq_qdepth"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x07ffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x07ffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 181,
+            "column" : 8,
+            "source_fragment" : "sm.deq_qdepth = sm.enq_qdepth + (19w3299 - sm.deq_qdepth - sm.deq_qdepth + sm.deq_qdepth)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "checksum"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["tcp_hdr", "window"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["tcp_hdr", "checksum"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 182,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.checksum = h.tcp_hdr.window + h.tcp_hdr.checksum"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.qLvDI",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 189,
+            "column" : 8,
+            "source_fragment" : "sm.egress_spec = sm.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "enq_qdepth"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_qdepth"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 190,
+            "column" : 8,
+            "source_fragment" : "sm.enq_qdepth = sm.deq_qdepth"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.xGmXY",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "dstAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "seqNo"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 193,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.dstAddr = h.tcp_hdr.seqNo"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "window"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 194,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.window ="
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.uzftE",
+      "id" : 22,
+      "runtime_data" : [
+        {
+          "name" : "rSmj",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "window"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "identification"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 197,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.window = h.ipv4_hdr.identification"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "res"]
+            },
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "dataOffset"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 198,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.res = h.tcp_hdr.dataOffset"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.uzftE",
+      "id" : 23,
+      "runtime_data" : [
+        {
+          "name" : "rSmj",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "window"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "identification"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 197,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.window = h.ipv4_hdr.identification"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "res"]
+            },
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "dataOffset"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 198,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.res = h.tcp_hdr.dataOffset"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.AprUk",
+      "id" : 24,
+      "runtime_data" : [
+        {
+          "name" : "NxYe",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : []
+    },
+    {
+      "name" : "ingress.yqtNa",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_port"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "ingress_port"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "egress_port"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01ff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 229,
+            "column" : 8,
+            "source_fragment" : "sm.ingress_port = sm.ingress_port - sm.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "version"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4_hdr", "version"]
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "-",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "+",
+                                      "left" : {
+                                        "type" : "hexstr",
+                                        "value" : "0x0c"
+                                      },
+                                      "right" : {
+                                        "type" : "field",
+                                        "value" : ["tcp_hdr", "dataOffset"]
+                                      }
+                                    }
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x0f"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "+",
+                                      "left" : {
+                                        "type" : "field",
+                                        "value" : ["tcp_hdr", "dataOffset"]
+                                      },
+                                      "right" : {
+                                        "type" : "hexstr",
+                                        "value" : "0x05"
+                                      }
+                                    }
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x0f"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0f"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x0f"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 230,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.version = h.ipv4_hdr.version + (8988 + h.tcp_hdr.dataOffset - (h.tcp_hdr.dataOffset + 9349))"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.CKBPm",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "ingress.xIIYK",
+      "id" : 27,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "priority"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x06"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 309,
+            "column" : 8,
+            "source_fragment" : "sm.priority = 5078"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "fragOffset"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4_hdr", "fragOffset"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x1972"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x1fff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 310,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.fragOffset = h.ipv4_hdr.fragOffset - 9870"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "../tests/testdata/synthesized/prog_1.p4",
+        "line" : 71,
+        "column" : 8,
+        "source_fragment" : "ingress"
+      },
+      "init_table" : "ingress.iCCIIo",
+      "tables" : [
+        {
+          "name" : "ingress.iCCIIo",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 435,
+            "column" : 10,
+            "source_fragment" : "iCCIIo"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21, 23, 5],
+          "actions" : ["ingress.xGmXY", "ingress.uzftE", "NoAction"],
+          "base_default_next" : "ingress.eMvQYU",
+          "next_tables" : {
+            "ingress.xGmXY" : "ingress.eMvQYU",
+            "ingress.uzftE" : "ingress.eMvQYU",
+            "NoAction" : "ingress.eMvQYU"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.eMvQYU",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 462,
+            "column" : 10,
+            "source_fragment" : "eMvQYU"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11, 6],
+          "actions" : ["ingress.drop", "NoAction"],
+          "base_default_next" : "ingress.RcdbtG",
+          "next_tables" : {
+            "ingress.drop" : "ingress.RcdbtG",
+            "NoAction" : "ingress.RcdbtG"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.RcdbtG",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 427,
+            "column" : 10,
+            "source_fragment" : "RcdbtG"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "VgwMsv",
+              "target" : ["ipv4_hdr", "fragOffset"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15, 4],
+          "actions" : ["ingress.KGnsA", "NoAction"],
+          "base_default_next" : "ingress.MdgfrX",
+          "next_tables" : {
+            "ingress.KGnsA" : "ingress.MdgfrX",
+            "NoAction" : "ingress.MdgfrX"
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.MdgfrX",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 561,
+            "column" : 10,
+            "source_fragment" : "MdgfrX"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12, 25, 24, 27, 8],
+          "actions" : ["ingress.drop", "ingress.yqtNa", "ingress.AprUk", "ingress.xIIYK", "NoAction"],
+          "base_default_next" : "ingress.SSjiQm",
+          "next_tables" : {
+            "ingress.drop" : "ingress.SSjiQm",
+            "ingress.yqtNa" : "ingress.SSjiQm",
+            "ingress.AprUk" : "ingress.SSjiQm",
+            "ingress.xIIYK" : "ingress.SSjiQm",
+            "NoAction" : "ingress.SSjiQm"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.SSjiQm",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 413,
+            "column" : 10,
+            "source_fragment" : "SSjiQm"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "AcTwBJ",
+              "target" : ["ipv4_hdr", "fragOffset"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14, 3],
+          "actions" : ["ingress.KGnsA", "NoAction"],
+          "base_default_next" : "ingress.LfAlmt",
+          "next_tables" : {
+            "ingress.KGnsA" : "ingress.LfAlmt",
+            "NoAction" : "ingress.LfAlmt"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.LfAlmt",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 521,
+            "column" : 10,
+            "source_fragment" : "LfAlmt"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "ismYzW",
+              "target" : ["ipv4_hdr", "fragOffset"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "jzJEvZ",
+              "target" : ["standard_metadata", "ingress_port"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18, 16, 7],
+          "actions" : ["ingress.qYjVT", "ingress.AWryv", "NoAction"],
+          "base_default_next" : "ingress.KhJbfO",
+          "next_tables" : {
+            "ingress.qYjVT" : "ingress.KhJbfO",
+            "ingress.AWryv" : "ingress.KhJbfO",
+            "NoAction" : "ingress.KhJbfO"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.KhJbfO",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 358,
+            "column" : 10,
+            "source_fragment" : "KhJbfO"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [17, 26, 0],
+          "actions" : ["ingress.qYjVT", "ingress.CKBPm", "NoAction"],
+          "base_default_next" : "ingress.HcEnbm",
+          "next_tables" : {
+            "ingress.qYjVT" : "ingress.HcEnbm",
+            "ingress.CKBPm" : "ingress.HcEnbm",
+            "NoAction" : "ingress.HcEnbm"
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.HcEnbm",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 375,
+            "column" : 10,
+            "source_fragment" : "HcEnbm"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "heQZmU",
+              "target" : ["standard_metadata", "ingress_global_timestamp"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "ydfIeI",
+              "target" : ["standard_metadata", "priority"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "DpCXWt",
+              "target" : ["ipv4_hdr", "fragOffset"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9, 13, 20, 1],
+          "actions" : ["ingress.drop", "ingress.KGnsA", "ingress.qLvDI", "NoAction"],
+          "base_default_next" : "ingress.TxDvMJ",
+          "next_tables" : {
+            "ingress.drop" : "ingress.TxDvMJ",
+            "ingress.KGnsA" : "ingress.TxDvMJ",
+            "ingress.qLvDI" : "ingress.TxDvMJ",
+            "NoAction" : "ingress.TxDvMJ"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.TxDvMJ",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "../tests/testdata/synthesized/prog_1.p4",
+            "line" : 387,
+            "column" : 10,
+            "source_fragment" : "TxDvMJ"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "YHRDAc",
+              "target" : ["standard_metadata", "priority"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10, 19, 22, 2],
+          "actions" : ["ingress.drop", "ingress.jPhyW", "ingress.uzftE", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "ingress.drop" : null,
+            "ingress.jPhyW" : null,
+            "ingress.uzftE" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : []
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "../tests/testdata/synthesized/prog_1.p4",
+        "line" : 689,
+        "column" : 8,
+        "source_fragment" : "egress"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "../tests/testdata/synthesized/prog_1.p4",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "table_to_table": {
+        "MyIngress.tab1": "MyIngress.tab1",
+        "MyIngress.tab2": "MyIngress.tab2",
+        "MyIngress.tab3": "MyIngress.tab3",
+        "tbl_simple_test195": "tbl_simple_test195"
+    },
+    "table_to_cxt": {
+        "MyIngress.tab1": 0,
+        "MyIngress.tab2": 1,
+        "MyIngress.tab3": 0,
+        "tbl_simple_test195": 1
+    }
+}

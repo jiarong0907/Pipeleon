@@ -1,0 +1,146 @@
+{
+	"actions" :
+	{
+		"0" :
+		{
+			"cxt" : 0,
+			"name" : "NoAction"
+		},
+		"1" :
+		{
+			"cxt" : 0,
+			"name" : "NoAction"
+		},
+		"2" :
+		{
+			"cxt" : 1,
+			"name" : "NoAction"
+		},
+		"3" :
+		{
+			"cxt" : 0,
+			"name" : "MyIngress.forward"
+		},
+		"4" :
+		{
+			"cxt" : 0,
+			"name" : "MyIngress.conn_insert"
+		},
+		"5" :
+		{
+			"cxt" : 0,
+			"name" : "MyIngress.tag"
+		},
+		"6" :
+		{
+			"cxt" : 1,
+			"name" : "MyIngress.drop"
+		}
+	},
+	"status" : "reoptimizing",
+	"tables" :
+	{
+		"MyIngress.acl_tab" :
+		{
+			"cxt" : 1,
+			"entries" : []
+		},
+		"MyIngress.conn_track_tab" :
+		{
+			"cxt" : 0,
+			"entries" :
+			[
+				{
+					"action_data" : [],
+					"action_name" : "MyIngress.conn_insert",
+					"match_key" :
+					[
+						{
+							"key" : "06",
+							"type" : "EXACT"
+						},
+						{
+							"key" : "0a00010a",
+							"type" : "EXACT"
+						},
+						{
+							"key" : "04d3",
+							"type" : "EXACT"
+						}
+					],
+					"priority" : 0
+				},
+				{
+					"action_data" : [],
+					"action_name" : "MyIngress.conn_insert",
+					"match_key" :
+					[
+						{
+							"key" : "06",
+							"type" : "EXACT"
+						},
+						{
+							"key" : "0a000115",
+							"type" : "EXACT"
+						},
+						{
+							"key" : "04d3",
+							"type" : "EXACT"
+						}
+					],
+					"priority" : 0
+				}
+			],
+			"migrated" :
+			{
+				"actions" :
+				[
+					"MyIngress.conn_insert"
+				],
+				"cxt" : 1
+			}
+		},
+		"MyIngress.forward_tab" :
+		{
+			"cxt" : 0,
+			"entries" :
+			[
+				{
+					"action_data" :
+					[
+						"1"
+					],
+					"action_name" : "MyIngress.forward",
+					"match_key" :
+					[
+						{
+							"key" : "0a00010a",
+							"type" : "EXACT"
+						}
+					],
+					"priority" : 0
+				},
+				{
+					"action_data" :
+					[
+						"2"
+					],
+					"action_name" : "MyIngress.forward",
+					"match_key" :
+					[
+						{
+							"key" : "0a000115",
+							"type" : "EXACT"
+						}
+					],
+					"priority" : 0
+				}
+			]
+		},
+		"MyIngress.tag_tab" :
+		{
+			"cxt" : 0,
+			"entries" : []
+		}
+	}
+}
