@@ -1,0 +1,39 @@
+---
+cpu_latency: 500
+dram_latency: 200
+cross_target_migration_cost: 500
+hardware:
+  # used to time the latency if having ternary keys
+  lat_ternary_ratio: 5
+  lat_lpm_ratio: 3
+  # the action primitive len steps, used to compute the latency for actions
+  action_len_step: 1
+  entry_size: 32
+  # the step used to compute memory usage
+  mem_len_step: 3
+  # For HwSteering init function
+  memory_size: 32000000000
+  base_insertion_latency: 200
+  base_datapath_latency: 10
+  hash_next_lookup_panelty: 30
+  parallel_steering_pipes: 2
+  parallel_treads_per_core: 8
+  lookup_latency: 200
+  table_size_step: 100000
+software:
+  # used to time the latency if having ternary keys
+  lat_ternary_ratio: 2
+  # the action primitive len steps, used to compute the latency for actions
+  action_len_step: 1
+  entry_size: 32
+  # the step used to compute memory usage
+  mem_len_step: 3
+  # For SwSteering init function
+  arm_cores: 8
+  memory_size: 32000000000
+  base_insertion_latency: 200
+  base_latency: 3000
+  hash_next_lookup_panelty: 100
+  parser_latency: 100
+  table_size_step: 100000
+...
