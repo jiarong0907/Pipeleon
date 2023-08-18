@@ -8,3 +8,6 @@ Install pre-commit to enforce code style consistency and static checks. From `${
 pip install pre-commit
 pre-commit install
 ```
+
+## License
+The code is released under the [GNU Affero General Public License v3](https://www.gnu.org/licenses/agpl-3.0.html).
