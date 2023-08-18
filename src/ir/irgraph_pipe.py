@@ -398,8 +398,9 @@ class IrGraphPipe(nx.DiGraph):
             assert math.isclose(y[0], 1), f"When the x has one value, y must be 1"
             x.insert(0, 0)
             y.insert(0, 0)
-        # Disable this, because it makes pypy very slow
-        return x, y
+
+        # uncomment the following lines to disable this, because it makes pypy very slow
+        # return x, y
 
         # f=interpolate.interp1d(x, y, kind='linear')
         step = max(int((x[-1] - x[0]) / 1000), 1)
