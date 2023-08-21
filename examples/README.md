@@ -1,5 +1,11 @@
 ## `option_gain_cost.py`
 
+```
+# in ${REPOROOT}/examples
+
+python3 option_gain_cost.py
+```
+
 This example shows the basic workflow of how to compute all the optimization options for a P4 program with fake runtime profiles. Results will be printed on terminals and written into a `.csv` file.
 
 | pipelet_start | pipelet_length | mcost    | icost | lgain   | tgain | Reorder  | Softcopy | Softmove | Merge | Cache |
@@ -22,3 +28,31 @@ Results will be something like the above. It summarizes all the valid optimizati
 
 The rest of the columns show the detailed optimizations. It assigns a table ID for each table in a pipelet starting from 0. For example, `Reorder [1, 0, 2]` means the new table order is table1, table0, table2, which swaps the order of the first two tables.
 `Cache [(0, 1)]` means caching table0 and table1 using one cache.
+
+## `topk_optimization.py`
+
+```
+# in ${REPOROOT}/examples
+
+python3 topk_optimization.py
+```
+
+This example shows how to select top-k pipelets and compute the best optimization strategy. Sample output:
+```
+All pipelets:  ['sirius_ingress.direction_lookup', 'sirius_ingress.acl_stage1', 'sirius_ingress.routing', 'sirius_ingress.eni_lookup_from_vm']
+Topk pipelets:  ['sirius_ingress.direction_lookup']
+================================= ProgramOption ================================
+gain: 1239.999999999999
+num_of_options: 1
+=================================
+start_node_name: sirius_ingress.direction_lookup
+pipelet_length: 2
+num_combined_options: 1
+mcost: 92800000
+icost: 2000
+lgain: 1239.999999999999
+tgain: 78.0
+new_order: [1, 0] ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_lookup']
+>>>>>CacheOption
+start_table_id: 0, length: 2 ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_lookup']
+```
