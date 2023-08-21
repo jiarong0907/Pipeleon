@@ -41,5 +41,16 @@ pip install pre-commit
 pre-commit install
 ```
 
+## Citation
+
+```
+@inproceedings {pipeleon-xing,
+    author = {Jiarong Xing and Yiming Qiu and Kuo-Feng Hsu and Songyuan Sui and Khalid Manaa and Omer Shabtai and Yonatan Piasetzky and Matty Kadosh and Arvind Krishnamurthy and T. S. Eugene Ng and Ang Chen},
+    title = {Unleashing SmartNIC Packet Processing Performance in P4},
+    booktitle = {Proc. ACM SIGCOMM},
+    year = {2023}
+}
+```
+
 ## License
 The code is released under the [GNU Affero General Public License v3](https://www.gnu.org/licenses/agpl-3.0.html).
