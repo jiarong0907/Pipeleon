@@ -1,6 +1,6 @@
 import pytest_is_running
 
-GROUP_CACHE_ENABLED = True
+GROUP_CACHE_ENABLED = False
 
 USE_CALIBRATED_COST_MODEL = False
 # This should only be enabled for the pipelet benchmark experiments
