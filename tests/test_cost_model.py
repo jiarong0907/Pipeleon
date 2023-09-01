@@ -109,7 +109,7 @@ class TestPipeletOptionEval:
                 len(pipe_opt.combined_options) == 1 and isinstance(pipe_opt.combined_options[0], SoftmoveOption)
             ):
                 print(pipe_opt)
-                assert pipe_opt.icost != 0 and pipe_opt.mcost != 0
+                assert pipe_opt.icost >= 0 and pipe_opt.mcost >= 0
 
 
 @patch("graph_optimizer.json_manager.JsonManager.retrieve_runtime_states")

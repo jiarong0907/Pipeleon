@@ -285,6 +285,41 @@ class TestMerge:
         assert merged_table._default_action_param == []
         assert merged_table._default_action_entry_const == False
 
+    def test_merge_table_insertion_rate(self, json_path):
+        irg, target = JsonManager.retrieve_presplit(json_path)
+        JsonManager.compile_time_json_planning(irg)
+        ingress_graph = irg.get_pipe("ingress")
+        tables = list(ingress_graph.tables)
+        assert len(tables) >= 2
+        exact_tab1 = tables[0]
+        exact_tab2 = tables[1]
+        assert isinstance(exact_tab1, Table) and isinstance(exact_tab2, Table)
+        exact_tab1.optimized_metadata = MergeMetadata(
+            start_table_id=0, length=2, merged_tables=[exact_tab1, exact_tab2]
+        )
+        exact_tab1.update_prob_with_counts({"MyIngress.tab_exact1_act1": 60, "MyIngress.tab_exact1_act2": 40})
+        exact_tab2.update_prob_with_counts({"MyIngress.tab_exact2_act1": 70, "MyIngress.tab_exact2_act2": 30})
+        exact_tab1.current_size = 10
+        exact_tab2.current_size = 20
+        exact_tab1.entry_insertion_rate = 20
+        exact_tab2.entry_insertion_rate = 10
+        merged_table = exact_tab1._create_merge_table(irg, ingress_graph, "merged_table")
+        assert merged_table.entry_insertion_rate == 500
+
+        exact_tab1.current_size = 20
+        exact_tab2.current_size = 20
+        exact_tab1.entry_insertion_rate = 20
+        exact_tab2.entry_insertion_rate = 10
+        merged_table = exact_tab1._create_merge_table(irg, ingress_graph, "merged_table")
+        assert merged_table.entry_insertion_rate == 600
+
+        exact_tab1.current_size = 1
+        exact_tab2.current_size = 2
+        exact_tab1.entry_insertion_rate = 3
+        exact_tab2.entry_insertion_rate = 4
+        merged_table = exact_tab1._create_merge_table(irg, ingress_graph, "merged_table")
+        assert merged_table.entry_insertion_rate == 10
+
 
 @pytest.mark.parametrize(
     "json_path",

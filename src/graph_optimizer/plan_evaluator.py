@@ -67,6 +67,7 @@ class PlanEvaluator:
         # mcost, which causes bugs for DP search, so we set the minimal value to 1
         if pipelet_option.mcost < 0:
             pipelet_option.mcost = 1
+        assert pipelet_option.icost >= 0, f"The icost should be always greater or equal than zero."
 
         # pipelet_option.lgain = -1*(0.5*delta._median_latency + 0.5*delta._p99_latency)
         # To make the computation of lgain and tgain use the same latency

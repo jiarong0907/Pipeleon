@@ -420,16 +420,24 @@ class Table(GeneralTable):
             action_name_to_count[merged_default_action_name] = miss_count
         merged_next_table_selector.update_action_probability(action_name_to_count)
 
-        # Update current table size and insertion rate
+        # Update current table size
         # We use simple cross-product because the table entries are computed
         # by cross-product.
         merged_current_size = 1
-        merged_insertion_rate = 1
         for t in tables_to_merge:
             assert t.current_size != None, f"The current size of table {t.name} was not set."
             merged_current_size = merged_current_size * t.current_size
+
+        # Update insertion rate
+        merged_insertion_rate = 0
+        for t in tables_to_merge:
             assert t.entry_insertion_rate != None, f"The insertion rate of table {t.name} was not set."
-            merged_insertion_rate = merged_insertion_rate * t.entry_insertion_rate
+            # the insertion rate incurred by table t is its insertion rate times all other tables' sizes
+            insertion_rate_t = t.entry_insertion_rate
+            for k in tables_to_merge:
+                if t.id != k.id:
+                    insertion_rate_t = insertion_rate_t * k.current_size
+            merged_insertion_rate += insertion_rate_t
 
         merged_table = MergeTable(
             irgraph=ir_graph,
