@@ -14,4 +14,5 @@ cd Pipeleon
 pip install -r requirements.txt
 # install pytest (pytest-3)
 sudo apt-get install -y python3-pytest
-pytest-3 --workers auto
+# uncomment this enable pytest after VM initialization
+# pytest-3 --workers auto

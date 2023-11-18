@@ -43,7 +43,6 @@ vagrant ssh
 ```
 
 This will create a Ubuntu-20.04 VM and automatically install our dependency using script `${REPOROOT}/vagrant_setup.sh`.
-At the end of the setup, it will run all unittests using `pytest`.
 
 To setup manually, refer to the setup script here: `${REPOROOT}/vagrant_setup.sh`.
 
