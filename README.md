@@ -19,13 +19,13 @@ Pipeleon can not only optimize P4 programs at compile time based on a provided p
 
 A Vagrantfile has been provided in `${REPOROOT}`, which allows you to deploy the system with on command.
 
-Software versions:
+#### Software versions
 ```
 Vagrant 2.2.10
 VirtualBox Version: 5.1.38r122592
 Guest Additions Version: 6.1.16
 ```
-### CPU & memory
+#### CPU & memory
 In the Vagrantfile, we configure the VM to use 8 CPUs and 16GB memory. This is overkilling for most cases. Please consider adjusting the number based on your machine's available resources.
 
 ```
@@ -33,7 +33,7 @@ vb.cpus = 8
 vb.memory = "16384"
 ```
 
-### start VM and login
+#### Start VM and login
 
 From `${REPOROOT}`:
 ```
