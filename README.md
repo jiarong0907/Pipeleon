@@ -19,9 +19,27 @@ Pipeleon can not only optimize P4 programs at compile time based on a provided p
 
 A Vagrantfile has been provided in `${REPOROOT}`, which allows you to deploy the system with on command.
 
+Software versions:
+```
+Vagrant 2.2.10
+VirtualBox Version: 5.1.38r122592
+Guest Additions Version: 6.1.16
+```
+### CPU & memory
+In the Vagrantfile, we configure the VM to use 8 CPUs and 16GB memory. This is overkilling for most cases. Please consider adjusting the number based on your machine's available resources.
+
+```
+vb.cpus = 8
+vb.memory = "16384"
+```
+
+### start VM and login
+
 From `${REPOROOT}`:
 ```
 vagrant up
+# The vm uses default user name 'vagrant'. ssh to the VM by
+vagrant ssh
 ```
 
 This will create a Ubuntu-20.04 VM and automatically install our dependency using script `${REPOROOT}/vagrant_setup.sh`.

@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "bento/ubuntu-20.04"
-  config.disksize.size = '30GB'
+  # config.disksize.size = '30GB'
   config.vm.define "pipeleon"
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
