@@ -105,6 +105,32 @@ new_order: [1, 0] ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_loo
 start_table_id: 0, length: 2 ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_lookup']
 ```
 
+## Group optimization
+Group optimizations has one more step after selecting the top-k pipelets.
+
+The following code takes the top-k pipelets and creates the group.
+```
+cfg = ControlFlowGraph._build_cfg(ingress_graph)
+ControlFlowGraph._get_aggregation(cfg)
+pipe_prgs = ControlFlowGraph._get_topk_pipelet_groups(ingress_graph, cfg, topk_pipelets)
+```
+
+It computes optimization uses the `PipeletGroupOptimizer`.
+```
+program_option = PipeletGroupOptimizer.reoptimize_dp(
+    mavail = runtime_states.total_memory,
+    iavail = runtime_states.total_entry_insertion_bandwidth,
+    optimize_method = enabled_methods,
+    optimize_target = OptimizeTarget.LATENCY,
+    pipelet_groups = pipe_prgs
+)
+```
+
+A complete example can be found [here](examples/group_optimization.py). To run the example, please first enable group `GROUP_CACHE_ENABLED` [here](src/commons/config.py).
+
+**Notice:** The current group optimization implementation only supports caching.
+
+
 ## Cost model
 Pipeleon computes the performance gain based on a cost model. We provide an example `customized_nic.yaml` [here](src/targets/cost_models/customized_nic.yaml). Note that this is a fake cost model for a made-up NIC, not the one we used in the paper. Please replace it with your actual cost model.
 
@@ -142,3 +168,25 @@ start_table_id: 0, length: 2 ==> ['sirius_ingress.appliance', 'sirius_ingress.di
 ```
 {'pipelet_start': 'sirius_ingress.direction_lookup', 'pipelet_length': 2, 'mcost': 92800000, 'icost': 2000, 'lgain': 1218.5553152967934, 'tgain': 76.0, 'Reorder': [1, 0], 'Softcopy': [], 'Softmove': [], 'Merge': [], 'Cache': [(0, 2)]}
 ```
+
+- `pipelet_start`: The table name of the starting node for this pipelet.
+- `pipelet_length`: The length of the pipelet (number of tables on this pipelet).
+- `mcost`: Memory cost
+- `icost`: Entry update rate cost
+- `lgain`: Latency benefit
+- `tgain`: Throughput benefit
+
+The rest of the columns show the detailed optimizations. It assigns a table ID for each table in a pipelet starting from 0. For example, `Reorder [1, 0, 2]` means the new table order is table1, table0, table2, which swaps the order of the first two tables.
+`Cache [(0, 1)]` means caching table0 and table1 using one cache.
+
+
+## Examples
+We provide several examples in the [examples](examples) folder. All of them can directly run by `python3 program_name`.
+
+- [e2e_topk_optimization.py](examples/e2e_topk_optimization.py) is an end-to-end example that shows all steps of the optimization.
+
+- [group_optimization.py](examples/group_optimization.py) demonstates the usage of group optimization on top of top-k optimization.
+
+- [optimize_and_eval.py](examples/optimize_and_eval.py) compares the performance gain and time between topk search and exhaustive search.
+
+- [pipelet_option_gain_cost.py](examples/pipelet_option_gain_cost.py) compuates all optimization options for each pipelet in a program.

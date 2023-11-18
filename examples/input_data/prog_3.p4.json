@@ -1,0 +1,3269 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["userMetadata.lIyHBn", 3, false],
+        ["userMetadata.COwfxe", 3, false],
+        ["userMetadata.hnVAfa", 3, false],
+        ["userMetadata.ThMaGF", 3, false],
+        ["userMetadata.qnWoPz", 3, false],
+        ["userMetadata.RXIoPT", 3, false],
+        ["userMetadata.CQMydx", 3, false],
+        ["userMetadata.ZTLrem", 3, false],
+        ["userMetadata.OPXFAd", 3, false],
+        ["userMetadata.uBMgJN", 3, false],
+        ["userMetadata.KkGjkh", 3, false],
+        ["userMetadata.RknSgr", 3, false],
+        ["userMetadata.eBDsYh", 3, false],
+        ["userMetadata.FFGQWN", 3, false],
+        ["userMetadata.XnbxMi", 3, false],
+        ["userMetadata.PhDKra", 3, false],
+        ["userMetadata.oOROWd", 3, false],
+        ["userMetadata.XqSCba", 3, false],
+        ["userMetadata.UXVQhp", 3, false],
+        ["userMetadata.ELpEeO", 3, false],
+        ["userMetadata.kuHgNF", 3, false],
+        ["userMetadata.IQcACG", 3, false],
+        ["userMetadata.vdLpBR", 3, false],
+        ["userMetadata.WyJcof", 3, false],
+        ["userMetadata.tqtJoc", 3, false],
+        ["userMetadata.ZVMNtV", 3, false],
+        ["userMetadata.NUhIle", 3, false],
+        ["userMetadata.biycos", 4, false],
+        ["userMetadata.Hdthss", 4, false],
+        ["userMetadata.FribwM", 4, false],
+        ["userMetadata.NcFUmW", 4, false],
+        ["userMetadata.XgBVcJ", 4, false],
+        ["userMetadata.XaolxG", 4, false],
+        ["userMetadata.GGGzSz", 4, false],
+        ["userMetadata.pDOaNi", 4, false],
+        ["userMetadata.gxhmiM", 4, false],
+        ["userMetadata.lXTVbt", 4, false],
+        ["userMetadata.kQUKKM", 4, false],
+        ["userMetadata.UigfDh", 4, false],
+        ["userMetadata.dhfSLP", 4, false],
+        ["userMetadata.IOhHNU", 4, false],
+        ["userMetadata.odXaZd", 4, false],
+        ["userMetadata.mRrQut", 4, false],
+        ["userMetadata.veWvFI", 4, false],
+        ["userMetadata.FcbQkI", 4, false],
+        ["userMetadata.QPNqwa", 4, false],
+        ["userMetadata.IOOSmd", 4, false],
+        ["userMetadata.zEkNXP", 4, false],
+        ["userMetadata.NMxNVC", 4, false],
+        ["userMetadata.JEGrMe", 4, false],
+        ["userMetadata.qzmjoN", 4, false],
+        ["userMetadata.XtcJBX", 4, false],
+        ["userMetadata.AtvmOp", 4, false],
+        ["userMetadata.fYRvdq", 4, false],
+        ["userMetadata.PPzneu", 8, false],
+        ["userMetadata.FxVykT", 8, false],
+        ["userMetadata.DHBGBQ", 8, false],
+        ["userMetadata.wFuvFm", 8, false],
+        ["userMetadata.AKDLnG", 8, false],
+        ["userMetadata.hXGtpw", 8, false],
+        ["userMetadata.rAzDTd", 8, false],
+        ["userMetadata.nZkGAj", 8, false],
+        ["userMetadata.YJThwa", 8, false],
+        ["userMetadata.DEqZrh", 8, false],
+        ["userMetadata.mZiUks", 8, false],
+        ["userMetadata.YBpmBn", 8, false],
+        ["userMetadata.rHzDco", 8, false],
+        ["userMetadata.ADitvK", 8, false],
+        ["userMetadata.cxWczu", 8, false],
+        ["userMetadata.shbyza", 8, false],
+        ["userMetadata.YgeXPa", 8, false],
+        ["userMetadata.QfPlcu", 8, false],
+        ["userMetadata.jqIOwb", 8, false],
+        ["userMetadata.Gycazt", 8, false],
+        ["userMetadata.AmhMzH", 8, false],
+        ["userMetadata.CuadTd", 8, false],
+        ["userMetadata.WTZmpD", 8, false],
+        ["userMetadata.tmqfST", 8, false],
+        ["userMetadata.YFTCqN", 8, false],
+        ["userMetadata.yBdwKz", 8, false],
+        ["userMetadata.kcnPmF", 8, false],
+        ["userMetadata.JvbJso", 9, false],
+        ["userMetadata.RRDoxS", 9, false],
+        ["userMetadata.vYbzVx", 9, false],
+        ["userMetadata.Egiesk", 9, false],
+        ["userMetadata.FNsZPa", 9, false],
+        ["userMetadata.NqDrVV", 9, false],
+        ["userMetadata.ZXoXat", 9, false],
+        ["userMetadata.XsFIJQ", 9, false],
+        ["userMetadata.piTnQp", 9, false],
+        ["userMetadata.kgxGpd", 9, false],
+        ["userMetadata.ewgNVh", 9, false],
+        ["userMetadata.VkcFbv", 9, false],
+        ["userMetadata.gueIGC", 9, false],
+        ["userMetadata.fWcfvx", 9, false],
+        ["userMetadata.eTNmUP", 9, false],
+        ["userMetadata.pBYraG", 9, false],
+        ["userMetadata.dOUbOQ", 9, false],
+        ["userMetadata.GzMHxe", 9, false],
+        ["userMetadata.KcJqQn", 9, false],
+        ["userMetadata.xkiLaj", 9, false],
+        ["userMetadata.HBxuIi", 9, false],
+        ["userMetadata.xCtKVb", 9, false],
+        ["userMetadata.fZrUJh", 9, false],
+        ["userMetadata.GotENh", 9, false],
+        ["userMetadata.msoXRP", 9, false],
+        ["userMetadata.pBDfra", 9, false],
+        ["userMetadata.LwCMBj", 9, false],
+        ["userMetadata.iJmxdy", 13, false],
+        ["userMetadata.ANCgGk", 13, false],
+        ["userMetadata.kvJdeZ", 13, false],
+        ["userMetadata.kbAjTX", 13, false],
+        ["userMetadata.MwUKnL", 13, false],
+        ["userMetadata.tNSRnX", 13, false],
+        ["userMetadata.FnyJcX", 13, false],
+        ["userMetadata.aBfXZQ", 13, false],
+        ["userMetadata.vfSluk", 13, false],
+        ["userMetadata.ixOLmw", 13, false],
+        ["userMetadata.KrkXry", 13, false],
+        ["userMetadata.ErlAAC", 13, false],
+        ["userMetadata.mkVykS", 13, false],
+        ["userMetadata.VQTWgK", 13, false],
+        ["userMetadata.oSQIjC", 13, false],
+        ["userMetadata.lfCiMN", 13, false],
+        ["userMetadata.svCBSd", 13, false],
+        ["userMetadata.MTrnBq", 13, false],
+        ["userMetadata.YuzSpI", 13, false],
+        ["userMetadata.BBKnOa", 13, false],
+        ["userMetadata.sDDIve", 13, false],
+        ["userMetadata.KdIDiV", 13, false],
+        ["userMetadata.BsLDJD", 13, false],
+        ["userMetadata.fnSNRb", 13, false],
+        ["userMetadata.yEKxnD", 13, false],
+        ["userMetadata.TIWslf", 13, false],
+        ["userMetadata.lbfrhA", 13, false],
+        ["userMetadata.OXJpvp", 16, false],
+        ["userMetadata.esopbZ", 16, false],
+        ["userMetadata.FoHDfu", 16, false],
+        ["userMetadata.WonSzi", 16, false],
+        ["userMetadata.OKRlhF", 16, false],
+        ["userMetadata.ckvLbk", 16, false],
+        ["userMetadata.PVIbxQ", 16, false],
+        ["userMetadata.vcEKUl", 16, false],
+        ["userMetadata.VGiaGg", 16, false],
+        ["userMetadata.nIJobv", 16, false],
+        ["userMetadata.tECyBv", 16, false],
+        ["userMetadata.JISMkq", 16, false],
+        ["userMetadata.emICrh", 16, false],
+        ["userMetadata.JklqWB", 16, false],
+        ["userMetadata.keOTMw", 16, false],
+        ["userMetadata.tTdPwk", 16, false],
+        ["userMetadata.xOdtwe", 16, false],
+        ["userMetadata.taqVek", 16, false],
+        ["userMetadata.LKweJC", 16, false],
+        ["userMetadata.QeqnWV", 16, false],
+        ["userMetadata.lgmlzg", 16, false],
+        ["userMetadata.OYXcPf", 16, false],
+        ["userMetadata.XVfSVG", 16, false],
+        ["userMetadata.laLyyV", 16, false],
+        ["userMetadata.oOSdHN", 16, false],
+        ["userMetadata.TczrjV", 16, false],
+        ["userMetadata.DoAEtL", 16, false],
+        ["userMetadata.VALTKU", 19, false],
+        ["userMetadata.GknhrV", 19, false],
+        ["userMetadata.YfwDmu", 19, false],
+        ["userMetadata.bQWvUN", 19, false],
+        ["userMetadata.BvinQB", 19, false],
+        ["userMetadata.JcxUIT", 19, false],
+        ["userMetadata.BZlvns", 19, false],
+        ["userMetadata.AVaZRm", 19, false],
+        ["userMetadata.eFaHqS", 19, false],
+        ["userMetadata.UBeMyC", 19, false],
+        ["userMetadata.uwRHDm", 19, false],
+        ["userMetadata.YjfAUD", 19, false],
+        ["userMetadata.WVlZAw", 19, false],
+        ["userMetadata.tdbPmJ", 19, false],
+        ["userMetadata.VTLMcj", 19, false],
+        ["userMetadata.GGusOu", 19, false],
+        ["userMetadata.PXcGof", 19, false],
+        ["userMetadata.dIPDNb", 19, false],
+        ["userMetadata.LmpsJu", 19, false],
+        ["userMetadata.gAhmQY", 19, false],
+        ["userMetadata.DrpErM", 19, false],
+        ["userMetadata.bkbxbM", 19, false],
+        ["userMetadata.FUBrlo", 19, false],
+        ["userMetadata.VMEFSk", 19, false],
+        ["userMetadata.WwLYqG", 19, false],
+        ["userMetadata.xkJTPi", 19, false],
+        ["userMetadata.VGzPzr", 19, false],
+        ["userMetadata.KALtoY", 32, false],
+        ["userMetadata.nFzVji", 32, false],
+        ["userMetadata.fFRTIr", 32, false],
+        ["userMetadata.YoJIGk", 32, false],
+        ["userMetadata.sJZQyf", 32, false],
+        ["userMetadata.iWjHty", 32, false],
+        ["userMetadata.LxtiGR", 32, false],
+        ["userMetadata.BGMlik", 32, false],
+        ["userMetadata.WgLTxK", 32, false],
+        ["userMetadata.alPGRG", 32, false],
+        ["userMetadata.SAywgi", 32, false],
+        ["userMetadata.zoETDP", 32, false],
+        ["userMetadata.numQiY", 32, false],
+        ["userMetadata.EvMMHk", 32, false],
+        ["userMetadata.DEVrbX", 32, false],
+        ["userMetadata.meNLYN", 32, false],
+        ["userMetadata.LEECtK", 32, false],
+        ["userMetadata.raKLQo", 32, false],
+        ["userMetadata.vIpWcD", 32, false],
+        ["userMetadata.TdpBLU", 32, false],
+        ["userMetadata.LpbWNQ", 32, false],
+        ["userMetadata.pGINUb", 32, false],
+        ["userMetadata.ZYGDbv", 32, false],
+        ["userMetadata.jxPZFr", 32, false],
+        ["userMetadata.dWOXyJ", 32, false],
+        ["userMetadata.frXiEm", 32, false],
+        ["userMetadata.HkZLhL", 32, false],
+        ["userMetadata.IWGEdc", 48, false],
+        ["userMetadata.SvqMjc", 48, false],
+        ["userMetadata.AcCvKI", 48, false],
+        ["userMetadata.OXoaad", 48, false],
+        ["userMetadata.tHPKyQ", 48, false],
+        ["userMetadata.xvlBFf", 48, false],
+        ["userMetadata.NdscHV", 48, false],
+        ["userMetadata.iZAGIw", 48, false],
+        ["userMetadata.RDcbDd", 48, false],
+        ["userMetadata.bWpAOc", 48, false],
+        ["userMetadata.HmTuPF", 48, false],
+        ["userMetadata.XwrJio", 48, false],
+        ["userMetadata.ayDTzT", 48, false],
+        ["userMetadata.AJtmxv", 48, false],
+        ["userMetadata.XCUBOt", 48, false],
+        ["userMetadata.fiyCfX", 48, false],
+        ["userMetadata.eSntSW", 48, false],
+        ["userMetadata.lzyGez", 48, false],
+        ["userMetadata.gmQUHn", 48, false],
+        ["userMetadata.sCoVFy", 48, false],
+        ["userMetadata.QizvLi", 48, false],
+        ["userMetadata.axGjEl", 48, false],
+        ["userMetadata.lNmZKZ", 48, false],
+        ["userMetadata.xhLHEj", 48, false],
+        ["userMetadata.XOOaip", 48, false],
+        ["userMetadata.JQplVW", 48, false],
+        ["userMetadata.qKGFXY", 48, false],
+        ["userMetadata.yTRhee", 64, false],
+        ["userMetadata.zbTfeg", 64, false],
+        ["userMetadata.zpUKdk", 64, false],
+        ["userMetadata.lolcHu", 64, false],
+        ["userMetadata.ykbtVr", 64, false],
+        ["userMetadata.DfJyPL", 64, false],
+        ["userMetadata.HVXCbn", 64, false],
+        ["userMetadata.WCguTY", 64, false],
+        ["userMetadata.gEqqME", 64, false],
+        ["userMetadata.zmSSVO", 64, false],
+        ["userMetadata.lnOXkf", 64, false],
+        ["userMetadata.zPEXyp", 64, false],
+        ["userMetadata.StRQgX", 64, false],
+        ["userMetadata.qDwNRu", 64, false],
+        ["userMetadata.mHVuRz", 64, false],
+        ["userMetadata.hRdLsJ", 64, false],
+        ["userMetadata.DaNtRj", 64, false],
+        ["userMetadata.zQswLJ", 64, false],
+        ["userMetadata.GSrJYu", 64, false],
+        ["userMetadata.utZkFe", 64, false],
+        ["userMetadata.HuzoAA", 64, false],
+        ["userMetadata.HoZYRI", 64, false],
+        ["userMetadata.RxKHnY", 64, false],
+        ["userMetadata.YYzAgn", 64, false],
+        ["userMetadata.dphwRe", 64, false],
+        ["userMetadata.qXNvKw", 64, false],
+        ["userMetadata.uoAKKy", 64, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["flex_change_path", 32, false],
+        ["flex_next_tab", 32, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dst_addr", 48, false],
+        ["src_addr", 48, false],
+        ["eth_type", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 8, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 4,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["seqNo", 32, false],
+        ["ackNo", 32, false],
+        ["dataOffset", 4, false],
+        ["res", 4, false],
+        ["flags", 8, false],
+        ["window", 16, false],
+        ["checksum", 16, false],
+        ["urgentPtr", 16, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "eth_hdr",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4_hdr",
+      "id" : 3,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp_hdr",
+      "id" : 4,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "eth_hdr"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4_hdr"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp_hdr"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+        "line" : 845,
+        "column" : 8,
+        "source_fragment" : "deparser"
+      },
+      "order" : ["eth_hdr", "ipv4_hdr", "tcp_hdr"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [],
+  "calculations" : [],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 17,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 19,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 24,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 27,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "ingress.drop",
+      "id" : 28,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 343,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(sm)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 344,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.drop",
+      "id" : 29,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 343,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(sm)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 344,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.drop",
+      "id" : 30,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 343,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(sm)"
+          }
+        },
+        {
+          "op" : "exit",
+          "parameters" : [],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 344,
+            "column" : 8,
+            "source_fragment" : "exit"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.KVasW",
+      "id" : 31,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.zmSSVO"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000000000001a7c"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 347,
+            "column" : 8,
+            "source_fragment" : "m.zmSSVO = 6804 - (64w2773 - 1255) + 1494"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.KVasW",
+      "id" : 32,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.zmSSVO"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000000000001a7c"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 347,
+            "column" : 8,
+            "source_fragment" : "m.zmSSVO = 6804 - (64w2773 - 1255) + 1494"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.HJceu",
+      "id" : 33,
+      "runtime_data" : [
+        {
+          "name" : "PESn",
+          "bitwidth" : 8
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "dstAddr"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000174f"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 350,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.dstAddr = 5967"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.hUzXz",
+      "id" : 34,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.YoJIGk"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.vIpWcD"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 356,
+            "column" : 8,
+            "source_fragment" : "m.YoJIGk = m.vIpWcD"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.XMJoE",
+      "id" : 35,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "fragOffset"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.TIWslf"]
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.FnyJcX"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x02c4"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x1fff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x1fff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 362,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.fragOffset = m.TIWslf + (m.FnyJcX - 7484)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.FOVxw",
+      "id" : 36,
+      "runtime_data" : [
+        {
+          "name" : "UPnB",
+          "bitwidth" : 16
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "diffserv"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.FxVykT"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 371,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.diffserv = m.FxVykT"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.UOnAu",
+      "id" : 37,
+      "runtime_data" : [
+        {
+          "name" : "ptVx",
+          "bitwidth" : 16
+        },
+        {
+          "name" : "WRtI",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.oSQIjC"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "-",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x1d07"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.lbfrhA"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x1fff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x1ecc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x1fff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 383,
+            "column" : 8,
+            "source_fragment" : "m.oSQIjC = 13w7431 - m.lbfrhA + 13w5359 - 13w5667"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.xABBg",
+      "id" : 38,
+      "runtime_data" : [
+        {
+          "name" : "upTq",
+          "bitwidth" : 64
+        },
+        {
+          "name" : "jaug",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.meNLYN"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 389,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.srcAddr = m.meNLYN"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.vRVlJ",
+      "id" : 39,
+      "runtime_data" : [
+        {
+          "name" : "pyRf",
+          "bitwidth" : 4
+        },
+        {
+          "name" : "ozUw",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "ackNo"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "instance_type"]
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.frXiEm"]
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.KALtoY"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 392,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.ackNo = sm.instance_type - (m.frXiEm + m.KALtoY)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.uxhBI",
+      "id" : 40,
+      "runtime_data" : [
+        {
+          "name" : "fuQd",
+          "bitwidth" : 8
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "ttl"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.PPzneu"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 395,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.ttl = m.PPzneu"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.wEuoM",
+      "id" : 41,
+      "runtime_data" : [
+        {
+          "name" : "kxpZ",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.YfwDmu"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.PXcGof"]
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "-",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.YjfAUD"]
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.xkJTPi"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x07ffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x07ffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 398,
+            "column" : 8,
+            "source_fragment" : "m.YfwDmu = m.PXcGof + (m.YjfAUD - m.xkJTPi)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.bAJiq",
+      "id" : 42,
+      "runtime_data" : [
+        {
+          "name" : "okcM",
+          "bitwidth" : 8
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.frXiEm"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.TdpBLU"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.jxPZFr"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 401,
+            "column" : 8,
+            "source_fragment" : "m.frXiEm = m.TdpBLU - m.jxPZFr"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.CRtJx",
+      "id" : 43,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "fragOffset"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.kvJdeZ"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 428,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.fragOffset = m.kvJdeZ"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.OtZzS",
+      "id" : 44,
+      "runtime_data" : [
+        {
+          "name" : "NgaD",
+          "bitwidth" : 8
+        },
+        {
+          "name" : "gUhM",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.DrpErM"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.YjfAUD"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 437,
+            "column" : 8,
+            "source_fragment" : "m.DrpErM = m.YjfAUD"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.OtZzS",
+      "id" : 45,
+      "runtime_data" : [
+        {
+          "name" : "NgaD",
+          "bitwidth" : 8
+        },
+        {
+          "name" : "gUhM",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.DrpErM"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.YjfAUD"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 437,
+            "column" : 8,
+            "source_fragment" : "m.DrpErM = m.YjfAUD"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.cPaju",
+      "id" : 46,
+      "runtime_data" : [
+        {
+          "name" : "Chlf",
+          "bitwidth" : 8
+        },
+        {
+          "name" : "jaPr",
+          "bitwidth" : 16
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.lXTVbt"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.JEGrMe"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.NcFUmW"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x0f"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 440,
+            "column" : 8,
+            "source_fragment" : "m.lXTVbt = m.JEGrMe + m.NcFUmW"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.lCsFr",
+      "id" : 47,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.ANCgGk"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.lbfrhA"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0ea1"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x1fff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 446,
+            "column" : 8,
+            "source_fragment" : "m.ANCgGk = m.lbfrhA - (13w148 - 13w3767) - 8066"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.MfpRc",
+      "id" : 48,
+      "runtime_data" : [
+        {
+          "name" : "aabJ",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.nIJobv"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.keOTMw"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 449,
+            "column" : 8,
+            "source_fragment" : "m.nIJobv = m.keOTMw"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.MfpRc",
+      "id" : 49,
+      "runtime_data" : [
+        {
+          "name" : "aabJ",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.nIJobv"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.keOTMw"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 449,
+            "column" : 8,
+            "source_fragment" : "m.nIJobv = m.keOTMw"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.XvYNq",
+      "id" : 50,
+      "runtime_data" : [
+        {
+          "name" : "Jrkg",
+          "bitwidth" : 4
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "flags"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x02"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 455,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.flags = 2554"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.HMxWf",
+      "id" : 51,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["tcp_hdr", "flags"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.shbyza"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 461,
+            "column" : 8,
+            "source_fragment" : "h.tcp_hdr.flags = m.shbyza"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.btfnM",
+      "id" : 52,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.DHBGBQ"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.YBpmBn"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 488,
+            "column" : 8,
+            "source_fragment" : "m.DHBGBQ = m.YBpmBn"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.YxZwA",
+      "id" : 53,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.gEqqME"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.ykbtVr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 491,
+            "column" : 8,
+            "source_fragment" : "m.gEqqME = m.ykbtVr"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.EiYOe",
+      "id" : 54,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.mHVuRz"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.yTRhee"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000000000007a6"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffffffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 494,
+            "column" : 8,
+            "source_fragment" : "m.mHVuRz = m.yTRhee + 1958"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.LDkMV",
+      "id" : 55,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.ZXoXat"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.xCtKVb"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 500,
+            "column" : 8,
+            "source_fragment" : "m.ZXoXat = m.xCtKVb"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.vjKnB",
+      "id" : 56,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.kgxGpd"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.ewgNVh"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01ff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 509,
+            "column" : 8,
+            "source_fragment" : "m.kgxGpd = 9w176 + 9w445 + 3987 - m.ewgNVh"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "ingress.UGZRG",
+      "id" : 57,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4_hdr", "fragOffset"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.lfCiMN"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 521,
+            "column" : 8,
+            "source_fragment" : "h.ipv4_hdr.fragOffset = m.lfCiMN"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+        "line" : 341,
+        "column" : 8,
+        "source_fragment" : "ingress"
+      },
+      "init_table" : "ingress.IwTKVd",
+      "tables" : [
+        {
+          "name" : "ingress.IwTKVd",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 593,
+            "column" : 10,
+            "source_fragment" : "IwTKVd"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "vKgevX",
+              "target" : ["scalars", "userMetadata.gAhmQY"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "IRVazR",
+              "target" : ["tcp_hdr", "srcPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["NoAction"],
+          "base_default_next" : "node_3",
+          "next_tables" : {
+            "NoAction" : "node_3"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.QqkScr",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 724,
+            "column" : 10,
+            "source_fragment" : "QqkScr"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "zuAxLe",
+              "target" : ["standard_metadata", "deq_qdepth"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "jtIZfn",
+              "target" : ["scalars", "userMetadata.Hdthss"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "HavYkY",
+              "target" : ["scalars", "userMetadata.WwLYqG"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [51, 55, 22],
+          "actions" : ["ingress.HMxWf", "ingress.LDkMV", "NoAction"],
+          "base_default_next" : "ingress.jkObPj",
+          "next_tables" : {
+            "ingress.HMxWf" : "ingress.jkObPj",
+            "ingress.LDkMV" : "ingress.jkObPj",
+            "NoAction" : "ingress.jkObPj"
+          },
+          "default_entry" : {
+            "action_id" : 22,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.jkObPj",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 541,
+            "column" : 10,
+            "source_fragment" : "jkObPj"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "oEjIOn",
+              "target" : ["scalars", "userMetadata.DfJyPL"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "NKOOkD",
+              "target" : ["scalars", "userMetadata.zEkNXP"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [47, 1],
+          "actions" : ["ingress.lCsFr", "NoAction"],
+          "base_default_next" : "ingress.WgKISH",
+          "next_tables" : {
+            "ingress.lCsFr" : "ingress.WgKISH",
+            "NoAction" : "ingress.WgKISH"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.PvVLQa",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 617,
+            "column" : 10,
+            "source_fragment" : "PvVLQa"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "gYWGqo",
+              "target" : ["scalars", "userMetadata.qDwNRu"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [38, 10],
+          "actions" : ["ingress.xABBg", "NoAction"],
+          "base_default_next" : "ingress.lDmWFk",
+          "next_tables" : {
+            "ingress.xABBg" : "ingress.lDmWFk",
+            "NoAction" : "ingress.lDmWFk"
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.lDmWFk",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 601,
+            "column" : 10,
+            "source_fragment" : "lDmWFk"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "MPLUHY",
+              "target" : ["scalars", "userMetadata.wFuvFm"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [39, 8],
+          "actions" : ["ingress.vRVlJ", "NoAction"],
+          "base_default_next" : "ingress.MLhkqy",
+          "next_tables" : {
+            "ingress.vRVlJ" : "ingress.MLhkqy",
+            "NoAction" : "ingress.MLhkqy"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.MLhkqy",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 696,
+            "column" : 10,
+            "source_fragment" : "MLhkqy"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "BQMgDj",
+              "target" : ["scalars", "userMetadata.FxVykT"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "VKKIQc",
+              "target" : ["scalars", "userMetadata.KdIDiV"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "joxecg",
+              "target" : ["scalars", "userMetadata.mHVuRz"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [29, 46, 19],
+          "actions" : ["ingress.drop", "ingress.cPaju", "NoAction"],
+          "base_default_next" : "ingress.WgKISH",
+          "next_tables" : {
+            "ingress.drop" : "ingress.WgKISH",
+            "ingress.cPaju" : "ingress.WgKISH",
+            "NoAction" : "ingress.WgKISH"
+          },
+          "default_entry" : {
+            "action_id" : 19,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.WgKISH",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 754,
+            "column" : 10,
+            "source_fragment" : "WgKISH"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "tZJCLm",
+              "target" : ["scalars", "userMetadata.vcEKUl"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [50, 25],
+          "actions" : ["ingress.XvYNq", "NoAction"],
+          "base_default_next" : "ingress.SfZCoD",
+          "next_tables" : {
+            "ingress.XvYNq" : "ingress.SfZCoD",
+            "NoAction" : "ingress.SfZCoD"
+          },
+          "default_entry" : {
+            "action_id" : 25,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.SfZCoD",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 585,
+            "column" : 10,
+            "source_fragment" : "SfZCoD"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "PMmNFf",
+              "target" : ["scalars", "userMetadata.NUhIle"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "GuSmUS",
+              "target" : ["scalars", "userMetadata.YBpmBn"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["NoAction"],
+          "base_default_next" : "node_11",
+          "next_tables" : {
+            "NoAction" : "node_11"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.bxfQtC",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 532,
+            "column" : 10,
+            "source_fragment" : "bxfQtC"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "sAkgXZ",
+              "target" : ["scalars", "userMetadata.qKGFXY"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [31, 42, 0],
+          "actions" : ["ingress.KVasW", "ingress.bAJiq", "NoAction"],
+          "base_default_next" : "ingress.wvwJSm",
+          "next_tables" : {
+            "ingress.KVasW" : "ingress.wvwJSm",
+            "ingress.bAJiq" : "ingress.wvwJSm",
+            "NoAction" : "ingress.wvwJSm"
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.wvwJSm",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 677,
+            "column" : 10,
+            "source_fragment" : "wvwJSm"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "RfYFAZ",
+              "target" : ["scalars", "userMetadata.WTZmpD"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "pVtQRN",
+              "target" : ["scalars", "userMetadata.OYXcPf"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [35, 34, 17],
+          "actions" : ["ingress.XMJoE", "ingress.hUzXz", "NoAction"],
+          "base_default_next" : "node_15",
+          "next_tables" : {
+            "ingress.XMJoE" : "node_15",
+            "ingress.hUzXz" : "node_15",
+            "NoAction" : "node_15"
+          },
+          "default_entry" : {
+            "action_id" : 17,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.YaQozz",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 668,
+            "column" : 10,
+            "source_fragment" : "YaQozz"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hIzPDt",
+              "target" : ["tcp_hdr", "window"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "WRFlnc",
+              "target" : ["scalars", "userMetadata.fnSNRb"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [36, 16],
+          "actions" : ["ingress.FOVxw", "NoAction"],
+          "base_default_next" : "ingress.ShelDA",
+          "next_tables" : {
+            "ingress.FOVxw" : "ingress.ShelDA",
+            "NoAction" : "ingress.ShelDA"
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.ShelDA",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 640,
+            "column" : 10,
+            "source_fragment" : "ShelDA"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "dzIGpG",
+              "target" : ["scalars", "userMetadata.KkGjkh"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "UQNLTC",
+              "target" : ["scalars", "userMetadata.emICrh"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [37, 13],
+          "actions" : ["ingress.UOnAu", "NoAction"],
+          "base_default_next" : "ingress.zwyKrN",
+          "next_tables" : {
+            "ingress.UOnAu" : "ingress.zwyKrN",
+            "NoAction" : "ingress.zwyKrN"
+          },
+          "default_entry" : {
+            "action_id" : 13,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.HFvoZL",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 746,
+            "column" : 10,
+            "source_fragment" : "HFvoZL"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "dTNtIt",
+              "target" : ["scalars", "userMetadata.PVIbxQ"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [32, 24],
+          "actions" : ["ingress.KVasW", "NoAction"],
+          "base_default_next" : "ingress.EuNevh",
+          "next_tables" : {
+            "ingress.KVasW" : "ingress.EuNevh",
+            "NoAction" : "ingress.EuNevh"
+          },
+          "default_entry" : {
+            "action_id" : 24,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.EuNevh",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 735,
+            "column" : 10,
+            "source_fragment" : "EuNevh"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "CRpgqN",
+              "target" : ["scalars", "userMetadata.GGusOu"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hyzruw",
+              "target" : ["scalars", "userMetadata.KdIDiV"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [30, 56, 57, 23],
+          "actions" : ["ingress.drop", "ingress.vjKnB", "ingress.UGZRG", "NoAction"],
+          "base_default_next" : "ingress.YkOppI",
+          "next_tables" : {
+            "ingress.drop" : "ingress.YkOppI",
+            "ingress.vjKnB" : "ingress.YkOppI",
+            "ingress.UGZRG" : "ingress.YkOppI",
+            "NoAction" : "ingress.YkOppI"
+          },
+          "default_entry" : {
+            "action_id" : 23,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.YkOppI",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 625,
+            "column" : 10,
+            "source_fragment" : "YkOppI"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "KxsSba",
+              "target" : ["scalars", "userMetadata.zPEXyp"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [54, 11],
+          "actions" : ["ingress.EiYOe", "NoAction"],
+          "base_default_next" : "node_21",
+          "next_tables" : {
+            "ingress.EiYOe" : "node_21",
+            "NoAction" : "node_21"
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.hjZEiY",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 633,
+            "column" : 10,
+            "source_fragment" : "hjZEiY"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "vcnyqq",
+              "target" : ["scalars", "userMetadata.zbTfeg"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["NoAction"],
+          "base_default_next" : "ingress.qVCTdz",
+          "next_tables" : {
+            "NoAction" : "ingress.qVCTdz"
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.qVCTdz",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 567,
+            "column" : 10,
+            "source_fragment" : "qVCTdz"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "ktLRtP",
+              "target" : ["scalars", "userMetadata.JQplVW"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "IwaAzJ",
+              "target" : ["scalars", "userMetadata.frXiEm"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [41, 4],
+          "actions" : ["ingress.wEuoM", "NoAction"],
+          "base_default_next" : "ingress.zwyKrN",
+          "next_tables" : {
+            "ingress.wEuoM" : "ingress.zwyKrN",
+            "NoAction" : "ingress.zwyKrN"
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.gmBGoL",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 649,
+            "column" : 10,
+            "source_fragment" : "gmBGoL"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "AtgVOO",
+              "target" : ["scalars", "userMetadata.qKGFXY"],
+              "mask" : null
+            },
+            {
+              "match_type" : "ternary",
+              "name" : "mxSVah",
+              "target" : ["scalars", "userMetadata.gAhmQY"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "tHxsJF",
+              "target" : ["scalars", "userMetadata.xkiLaj"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [44, 14],
+          "actions" : ["ingress.OtZzS", "NoAction"],
+          "base_default_next" : "ingress.ogBITR",
+          "next_tables" : {
+            "ingress.OtZzS" : "ingress.ogBITR",
+            "NoAction" : "ingress.ogBITR"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.ogBITR",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 687,
+            "column" : 10,
+            "source_fragment" : "ogBITR"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "wjyMdo",
+              "target" : ["scalars", "userMetadata.kuHgNF"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [52, 40, 18],
+          "actions" : ["ingress.btfnM", "ingress.uxhBI", "NoAction"],
+          "base_default_next" : "ingress.zwyKrN",
+          "next_tables" : {
+            "ingress.btfnM" : "ingress.zwyKrN",
+            "ingress.uxhBI" : "ingress.zwyKrN",
+            "NoAction" : "ingress.zwyKrN"
+          },
+          "default_entry" : {
+            "action_id" : 18,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.KTYlCr",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 715,
+            "column" : 10,
+            "source_fragment" : "KTYlCr"
+          },
+          "key" : [
+            {
+              "match_type" : "ternary",
+              "name" : "pjuScF",
+              "target" : ["tcp_hdr", "res"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "QEBmQX",
+              "target" : ["scalars", "userMetadata.uoAKKy"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "kEVkLz",
+              "target" : ["scalars", "userMetadata.tqtJoc"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "ternary",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21],
+          "actions" : ["NoAction"],
+          "base_default_next" : "ingress.mNZQUJ",
+          "next_tables" : {
+            "NoAction" : "ingress.mNZQUJ"
+          },
+          "default_entry" : {
+            "action_id" : 21,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.mNZQUJ",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 558,
+            "column" : 10,
+            "source_fragment" : "mNZQUJ"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "ZbzdHH",
+              "target" : ["scalars", "userMetadata.YgeXPa"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "XGHINJ",
+              "target" : ["standard_metadata", "priority"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [48, 3],
+          "actions" : ["ingress.MfpRc", "NoAction"],
+          "base_default_next" : "ingress.WDIIoa",
+          "next_tables" : {
+            "ingress.MfpRc" : "ingress.WDIIoa",
+            "NoAction" : "ingress.WDIIoa"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.WDIIoa",
+          "id" : 21,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 576,
+            "column" : 10,
+            "source_fragment" : "WDIIoa"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "Ezzpgo",
+              "target" : ["scalars", "userMetadata.PVIbxQ"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [28, 43, 5],
+          "actions" : ["ingress.drop", "ingress.CRtJx", "NoAction"],
+          "base_default_next" : "ingress.cuXbBz",
+          "next_tables" : {
+            "ingress.drop" : "ingress.cuXbBz",
+            "ingress.CRtJx" : "ingress.cuXbBz",
+            "NoAction" : "ingress.cuXbBz"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.cuXbBz",
+          "id" : 22,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 659,
+            "column" : 10,
+            "source_fragment" : "cuXbBz"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "IWyJhC",
+              "target" : ["scalars", "userMetadata.ZYGDbv"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "aggsss",
+              "target" : ["tcp_hdr", "urgentPtr"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "bRKFXr",
+              "target" : ["scalars", "userMetadata.YuzSpI"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["NoAction"],
+          "base_default_next" : "ingress.zwyKrN",
+          "next_tables" : {
+            "NoAction" : "ingress.zwyKrN"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.zwyKrN",
+          "id" : 23,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 770,
+            "column" : 10,
+            "source_fragment" : "zwyKrN"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "KJleHu",
+              "target" : ["scalars", "userMetadata.HuzoAA"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "sPhQTz",
+              "target" : ["scalars", "userMetadata.emICrh"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "NpAhvs",
+              "target" : ["scalars", "userMetadata.HVXCbn"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [53, 27],
+          "actions" : ["ingress.YxZwA", "NoAction"],
+          "base_default_next" : "node_31",
+          "next_tables" : {
+            "ingress.YxZwA" : "node_31",
+            "NoAction" : "node_31"
+          },
+          "default_entry" : {
+            "action_id" : 27,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.WuBMLf",
+          "id" : 24,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 762,
+            "column" : 10,
+            "source_fragment" : "WuBMLf"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "UlHffu",
+              "target" : ["scalars", "userMetadata.RxKHnY"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [49, 26],
+          "actions" : ["ingress.MfpRc", "NoAction"],
+          "base_default_next" : "ingress.IFdwpE",
+          "next_tables" : {
+            "ingress.MfpRc" : "ingress.IFdwpE",
+            "NoAction" : "ingress.IFdwpE"
+          },
+          "default_entry" : {
+            "action_id" : 26,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.IFdwpE",
+          "id" : 25,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 609,
+            "column" : 10,
+            "source_fragment" : "IFdwpE"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "wGoFgj",
+              "target" : ["scalars", "userMetadata.OYXcPf"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "DaeUxo",
+              "target" : ["scalars", "userMetadata.aBfXZQ"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9],
+          "actions" : ["NoAction"],
+          "base_default_next" : "ingress.qOVhgb",
+          "next_tables" : {
+            "NoAction" : "ingress.qOVhgb"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.qOVhgb",
+          "id" : 26,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 707,
+            "column" : 10,
+            "source_fragment" : "qOVhgb"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "FIjOAV",
+              "target" : ["scalars", "userMetadata.TdpBLU"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [45, 20],
+          "actions" : ["ingress.OtZzS", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "ingress.OtZzS" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 20,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "ingress.OIVqYf",
+          "id" : 27,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 550,
+            "column" : 10,
+            "source_fragment" : "OIVqYf"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "immlxg",
+              "target" : ["scalars", "userMetadata.zQswLJ"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [33, 2],
+          "actions" : ["ingress.HJceu", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "ingress.HJceu" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_3",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 782,
+            "column" : 12,
+            "source_fragment" : "h.ipv4_hdr.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4_hdr", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "ingress.QqkScr",
+          "false_next" : "ingress.PvVLQa"
+        },
+        {
+          "name" : "node_11",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 792,
+            "column" : 12,
+            "source_fragment" : "h.tcp_hdr.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["tcp_hdr", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_12",
+          "false_next" : "ingress.zwyKrN"
+        },
+        {
+          "name" : "node_12",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 793,
+            "column" : 17,
+            "source_fragment" : "h.ipv4_hdr.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4_hdr", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "ingress.bxfQtC",
+          "false_next" : "ingress.KTYlCr"
+        },
+        {
+          "name" : "node_15",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 801,
+            "column" : 20,
+            "source_fragment" : "h.ipv4_hdr.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4_hdr", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "ingress.YaQozz",
+          "false_next" : "ingress.HFvoZL"
+        },
+        {
+          "name" : "node_21",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 808,
+            "column" : 24,
+            "source_fragment" : "m.odXaZd - (h.ipv4_hdr.version - (4w1 - h.ipv4_hdr.version)) != m.IOhHNU"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.odXaZd"]
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "-",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["ipv4_hdr", "version"]
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "expression",
+                                    "value" : {
+                                      "op" : "-",
+                                      "left" : {
+                                        "type" : "hexstr",
+                                        "value" : "0x01"
+                                      },
+                                      "right" : {
+                                        "type" : "field",
+                                        "value" : ["ipv4_hdr", "version"]
+                                      }
+                                    }
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x0f"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0f"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x0f"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.IOhHNU"]
+              }
+            }
+          },
+          "true_next" : "ingress.hjZEiY",
+          "false_next" : "ingress.gmBGoL"
+        },
+        {
+          "name" : "node_31",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+            "line" : 820,
+            "column" : 13,
+            "source_fragment" : "h.ipv4_hdr.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4_hdr", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "ingress.WuBMLf",
+          "false_next" : "ingress.OIVqYf"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+        "line" : 840,
+        "column" : 8,
+        "source_fragment" : "egress"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "/vagrant/offloadoptimizer/synthesizer/bench_topk_perf/program/prog_3.p4",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}
