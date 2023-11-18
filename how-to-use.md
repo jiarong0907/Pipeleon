@@ -104,3 +104,41 @@ new_order: [1, 0] ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_loo
 >>>>>CacheOption
 start_table_id: 0, length: 2 ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_lookup']
 ```
+
+## Cost model
+Pipeleon computes the performance gain based on a cost model. We provide an example `customized_nic.yaml` [here](src/targets/cost_models/customized_nic.yaml). Note that this is a fake cost model for a made-up NIC, not the one we used in the paper. Please replace it with your actual cost model.
+
+## Optimization config
+[src/commons/config.py](src/commons/config.py) defines a set of parameters that can be tuned for the optimization. Tune them based on the actual setup.
+
+## Debugging information
+Pipeleon provides a set of debugging information to help understand the optimization process. All the optimization options and their print formats are defined [here](src/graph_optimizer/options.py). These options can be printed by using `print(option_variable)`.
+
+The following is an example of printed optimization information for the entire program.
+```
+All pipelets:  ['sirius_ingress.acl_stage1', 'sirius_ingress.direction_lookup', 'sirius_ingress.eni_lookup_from_vm', 'sirius_ingress.routing'] # Each item is the first table's name on that pipelet
+Topk pipelets:  ['sirius_ingress.direction_lookup'] # Each item is the first table's name on that pipelet
+================================= ProgramOption ================================
+gain: 1239.999999999999
+num_of_options: 1
+=================================
+start_node_name: sirius_ingress.direction_lookup
+pipelet_length: 2
+num_combined_options: 1
+mcost: 92800000 # Memory cost
+icost: 2000 # Entry update bandwidth cost
+lgain: 1239.999999999999 # Latency gain
+tgain: 78.0 # Throughput gain
+new_order: [1, 0] ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_lookup'] # The new table order represented by their original table indexes.
+
+# The following is the detailed optimization options.
+>>>>>CacheOption
+start_table_id: 0, length: 2 ==> ['sirius_ingress.appliance', 'sirius_ingress.direction_lookup'] # Start from the first table, create a cache, which cache 2 tables.
+```
+
+`print(pipelet_option.info())` can get the detailed information of all optimizations that can be applied to a pipelet. The following example shows that the pipelet starting with table `direction_lookup` has 2 tables in total. The optimizations include swapping the table order and create a cache that starts from the first table and covers two tables.
+`Softcopy` means creating a table in the software, and `Softmove` means moving a table to the software. `Softcopy` is the `Copy` optimization in Section 3.2.4. `Softmove` is a unoptimizated version of `Cache` in Section 3.2.4, which does not insert the cache into the hardware. We will improve this.
+
+```
+{'pipelet_start': 'sirius_ingress.direction_lookup', 'pipelet_length': 2, 'mcost': 92800000, 'icost': 2000, 'lgain': 1218.5553152967934, 'tgain': 76.0, 'Reorder': [1, 0], 'Softcopy': [], 'Softmove': [], 'Merge': [], 'Cache': [(0, 2)]}
+```
