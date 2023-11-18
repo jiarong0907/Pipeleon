@@ -29,12 +29,12 @@ Results will be something like the above. It summarizes all the valid optimizati
 The rest of the columns show the detailed optimizations. It assigns a table ID for each table in a pipelet starting from 0. For example, `Reorder [1, 0, 2]` means the new table order is table1, table0, table2, which swaps the order of the first two tables.
 `Cache [(0, 1)]` means caching table0 and table1 using one cache.
 
-## `topk_optimization.py`
+## `e2e_topk_optimization.py`
 
 ```
 # in ${REPOROOT}/examples
 
-python3 topk_optimization.py
+python3 e2e_topk_optimization.py
 ```
 
 This example shows how to select top-k pipelets and compute the best optimization strategy. Sample output:

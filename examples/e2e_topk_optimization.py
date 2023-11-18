@@ -1,4 +1,5 @@
 import os, sys
+from copy import deepcopy
 
 root_path = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(0, os.path.abspath(root_path))
@@ -11,7 +12,7 @@ from unittest.mock import patch
 from commons.constants import OptimizeMethod, OptimizeTarget
 import commons.config as config
 from commons.base_logging import LogLevel, set_log_level
-from graph_optimizer.json_manager import JsonManager, JsonPlanner
+from graph_optimizer.json_manager import JsonManager, JsonDeployer, JsonPlanner
 from graph_optimizer.algorithms import PipeletOptimizer
 from graph_optimizer.graph_optimizer import Optimizer
 import tests.utils as TestUtils
@@ -81,7 +82,15 @@ def main(retrieve_runtime_states):
         optimize_target=OptimizeTarget.LATENCY,
         pipelets=topk_pipelets,
     )
+    assert program_option != None
     print(program_option)
+
+    # apply the optimization and get the optimized IR
+    TestUtils.apply_pipelet_options(program_option.option, ingress_graph)
+    JsonDeployer.prepare_optimizer_created_tables(irg)
+
+    # dump the optimized json
+    irg.export_p4cirjson(path="optimized.json")
 
 
 if __name__ == "__main__":

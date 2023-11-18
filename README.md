@@ -51,6 +51,10 @@ To setup manually, refer to the setup script here: `${REPOROOT}/vagrant_setup.sh
 
 We provide a large set of unit tests covering the system functions comprehensively. See the instructions here to run these tests: `${REPOROOT}/tests/README.md`.
 
+## User guide
+
+We provide a detailed user guide [here](how-to-use.md).
+
 ## Examples
 
 `${REPOROOT}/examples` provides several examples of using the system. See its README for more details.
