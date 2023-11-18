@@ -94,7 +94,7 @@ JsonDeployer.prepare_optimizer_created_tables(irg)
 irg.export_p4cirjson(path=optimized_json_path)
 ```
 
-### One complete example
+### A complete example
 `examples/e2e_topk_optimization.py` provides an end-to-end example of the above process. Run it with `python3 e2e_topk_optimization.py`; you will see an optimized json file (`optimized.json`).
 
 In the optimized json file, a new table `sirius_ingress.appliance$cch` is added, which is the cache table for `appliance` and `direction_lookup`. Also, their table order is also changed. In the original version, `direction_lookup` is before `appliance`, but the optimization swaps their order. All the changes are consistent with the printed optimization plan.
@@ -126,7 +126,7 @@ program_option = PipeletGroupOptimizer.reoptimize_dp(
 )
 ```
 
-A complete example can be found [here](examples/group_optimization.py). To run the example, please first enable group `GROUP_CACHE_ENABLED` [here](src/commons/config.py).
+A complete example can be found [here](examples/group_optimization.py). To run the example, please first enable group `GROUP_CACHE_ENABLED` [here](src/commons/config.py#L3).
 
 **Notice:** The current group optimization implementation only supports caching.
 
