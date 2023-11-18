@@ -190,3 +190,6 @@ We provide several examples in the [examples](examples) folder. All of them can 
 - [optimize_and_eval.py](examples/optimize_and_eval.py) compares the performance gain and time between topk search and exhaustive search.
 
 - [pipelet_option_gain_cost.py](examples/pipelet_option_gain_cost.py) compuates all optimization options for each pipelet in a program.
+
+## Unittest
+The [tests](tests) folder provides a long list of unitest programs covering various components of Pipeleon. It is also a good source to learn how to use Pipeleon. See the instructions [here](tests/README.md) to run these tests.
